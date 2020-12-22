@@ -92,21 +92,19 @@ The bucket's name will be of the format rain-artifacts-<AWS account id>-<AWS reg
 		if createErr != nil {
 			panic(ui.Errorf(createErr, "error creating changeset"))
 		}
-
-		changeSetStatus, err := cfn.GetChangeSet(stackName, changeSetName)
-		if err != nil {
-			panic(ui.Errorf(err, "error getting changeset status '%s'", formatChangeSet(changeSetStatus)))
-		}
-
 		spinner.Pop()
 
 		// Confirm changes
 		if !yes {
+			spinner.Push("Formatting change set")
+			status := formatChangeSet(stackName, changeSetName)
+			spinner.Pop()
+
 			fmt.Println("CloudFormation will make the following changes:")
-			fmt.Println(formatChangeSet(changeSetStatus))
+			fmt.Println(status)
 
 			if !console.Confirm(true, "Do you wish to continue?") {
-				err = cfn.DeleteChangeSet(stackName, changeSetName)
+				err := cfn.DeleteChangeSet(stackName, changeSetName)
 				if err != nil {
 					panic(ui.Errorf(err, "error while deleting changeset '%s'", changeSetName))
 				}
@@ -123,7 +121,7 @@ The bucket's name will be of the format rain-artifacts-<AWS account id>-<AWS reg
 		}
 
 		// Deploy!
-		err = cfn.ExecuteChangeSet(stackName, changeSetName)
+		err := cfn.ExecuteChangeSet(stackName, changeSetName)
 		if err != nil {
 			panic(ui.Errorf(err, "error while executing changeset '%s'", changeSetName))
 		}
