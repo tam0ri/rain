@@ -82,7 +82,7 @@ echo "PropertyTypes:"
 for file in sam-property-*.md; do
     resource_name=${prefix_types[$(basename -s .md $file | cut -d- -f3)]}
 
-    prop_type_name="$(head -n1 $file | sed -e 's/^# //' -e 's/<.*$//')"
+    prop_type_name="$(head -n1 $file | sed -e 's/^# //' -e 's/<.*$//' | sed -e 's/ .*$//')"
 
     echo "  ${resource_name}.${prop_type_name}:"
 

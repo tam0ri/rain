@@ -123,6 +123,17 @@ func patchCfnSpec(s spec.Spec) {
 	s.ResourceTypes["AWS::IoT::ProvisioningTemplate"].Properties["Tags"].Type = "List"
 
 	s.ResourceTypes["AWS::KMS::Key"].Properties["KeyPolicy"].PrimitiveType = "Json"
+
+	s.ResourceTypes["AWS::ECR::PublicRepository"].Properties["RepositoryPolicyText"].PrimitiveType = "String"
+
+	s.PropertyTypes["AWS::MediaPackage::PackagingConfiguration.CmafEncryption"].Properties["SpekeKeyProvider"].Type = "SpekeKeyProvider"
+	s.PropertyTypes["AWS::MediaPackage::PackagingConfiguration.DashEncryption"].Properties["SpekeKeyProvider"].Type = "SpekeKeyProvider"
+	s.PropertyTypes["AWS::MediaPackage::PackagingConfiguration.MssEncryption"].Properties["SpekeKeyProvider"].Type = "SpekeKeyProvider"
+	s.PropertyTypes["AWS::MediaPackage::PackagingConfiguration.HlsEncryption"].Properties["SpekeKeyProvider"].Type = "SpekeKeyProvider"
+
+	s.ResourceTypes["AWS::SageMaker::ModelPackageGroup"].Properties["ModelPackageGroupPolicy"].PrimitiveType = "Json"
+
+	s.PropertyTypes["AWS::DataBrew::Recipe.Action"].Properties["Parameters"].PrimitiveType = "Json"
 }
 
 func patchSamSpec(s spec.Spec) {
@@ -132,6 +143,7 @@ func patchSamSpec(s spec.Spec) {
 	s.ResourceTypes["AWS::Serverless::Api"].Properties["CanarySetting"].Type = "AWS::ApiGateway::Stage.CanarySetting"
 	s.ResourceTypes["AWS::Serverless::Api"].Properties["MethodSettings"].ItemType = "AWS::ApiGateway::Stage.MethodSetting"
 	s.ResourceTypes["AWS::Serverless::Api"].Properties["MethodSettings"].Type = "List"
+	s.PropertyTypes["AWS::Serverless::Api.DomainConfiguration"].Properties["MutualTlsAuthentication"].Type = "AWS::ApiGateway::DomainName.MutualTlsAuthentication"
 
 	s.ResourceTypes["AWS::Serverless::Function"].Properties["Environment"].Type = "AWS::Lambda::Function.Environment"
 	s.ResourceTypes["AWS::Serverless::Function"].Properties["ProvisionedConcurrencyConfig"].Type = "AWS::Lambda::Alias.ProvisionedConcurrencyConfiguration"
@@ -140,6 +152,7 @@ func patchSamSpec(s spec.Spec) {
 	s.ResourceTypes["AWS::Serverless::HttpApi"].Properties["AccessLogSettings"].Type = "AWS::ApiGatewayV2::Stage.AccessLogSettings"
 	s.ResourceTypes["AWS::Serverless::HttpApi"].Properties["DefaultRouteSettings"].Type = "AWS::ApiGatewayV2::Stage.RouteSettings"
 	s.ResourceTypes["AWS::Serverless::HttpApi"].Properties["RouteSettings"].Type = "AWS::ApiGatewayV2::Stage.RouteSettings"
+	s.PropertyTypes["AWS::Serverless::HttpApi.HttpApiDomainConfiguration"].Properties["MutualTlsAuthentication"].Type = "AWS::ApiGateway::DomainName.MutualTlsAuthentication"
 
 	s.ResourceTypes["AWS::Serverless::SimpleTable"].Properties["ProvisionedThroughput"].Type = "AWS::DynamoDB::Table.ProvisionedThroughput"
 	s.ResourceTypes["AWS::Serverless::SimpleTable"].Properties["SSESpecification"].Type = "AWS::DynamoDB::Table.SSESpecification"
