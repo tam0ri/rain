@@ -2413,6 +2413,11 @@ var Cfn = Spec{
 					Type:          "SnowflakeDestinationProperties",
 					UpdateType:    "Mutable",
 				},
+				"Upsolver": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-upsolver",
+					Type:          "UpsolverDestinationProperties",
+					UpdateType:    "Mutable",
+				},
 			},
 		},
 		"AWS::AppFlow::Flow.DestinationFlowConfig": &PropertyType{
@@ -2491,6 +2496,16 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-googleanalyticssourceproperties.html#cfn-appflow-flow-googleanalyticssourceproperties-object",
 					PrimitiveType: "String",
 					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AppFlow::Flow.IncrementalPullConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-incrementalpullconfig.html",
+			Properties: map[string]*Property{
+				"DatetimeTypeFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-incrementalpullconfig.html#cfn-appflow-flow-incrementalpullconfig-datetimetypefieldname",
+					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -2834,6 +2849,11 @@ var Cfn = Spec{
 					Required:      true,
 					UpdateType:    "Mutable",
 				},
+				"IncrementalPullConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-incrementalpullconfig",
+					Type:          "IncrementalPullConfig",
+					UpdateType:    "Mutable",
+				},
 				"SourceConnectorProperties": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-sourceconnectorproperties",
 					Required:      true,
@@ -2916,6 +2936,49 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-triggerconfig.html#cfn-appflow-flow-triggerconfig-triggertype",
 					PrimitiveType: "String",
 					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AppFlow::Flow.UpsolverDestinationProperties": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html",
+			Properties: map[string]*Property{
+				"BucketName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-bucketname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"BucketPrefix": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-bucketprefix",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"S3OutputFormatConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-s3outputformatconfig",
+					Required:      true,
+					Type:          "UpsolverS3OutputFormatConfig",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AppFlow::Flow.UpsolverS3OutputFormatConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html",
+			Properties: map[string]*Property{
+				"AggregationConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-aggregationconfig",
+					Type:          "AggregationConfig",
+					UpdateType:    "Mutable",
+				},
+				"FileType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-filetype",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"PrefixConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-prefixconfig",
+					Required:      true,
+					Type:          "PrefixConfig",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -5440,6 +5503,11 @@ var Cfn = Spec{
 					Type:          "List",
 					UpdateType:    "Mutable",
 				},
+				"JMXPrometheusExporter": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-jmxprometheusexporter",
+					Type:          "JMXPrometheusExporter",
+					UpdateType:    "Mutable",
+				},
 				"Logs": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-logs",
 					ItemType:      "Log",
@@ -5469,6 +5537,26 @@ var Cfn = Spec{
 					Required:          true,
 					Type:              "List",
 					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::ApplicationInsights::Application.JMXPrometheusExporter": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html",
+			Properties: map[string]*Property{
+				"HostPort": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html#cfn-applicationinsights-application-jmxprometheusexporter-hostport",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"JMXURL": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html#cfn-applicationinsights-application-jmxprometheusexporter-jmxurl",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"PrometheusPort": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html#cfn-applicationinsights-application-jmxprometheusexporter-prometheusport",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
 				},
 			},
 		},
@@ -5756,6 +5844,196 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::AuditManager::Assessment.AWSAccount": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html",
+			Properties: map[string]*Property{
+				"emailAddress": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html#cfn-auditmanager-assessment-awsaccount-emailaddress",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"id": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html#cfn-auditmanager-assessment-awsaccount-id",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html#cfn-auditmanager-assessment-awsaccount-name",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.AWSAccounts": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccounts.html",
+			Properties: map[string]*Property{
+				"AWSAccounts": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccounts.html#cfn-auditmanager-assessment-awsaccounts-awsaccounts",
+					ItemType:      "AWSAccount",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.AWSService": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsservice.html",
+			Properties: map[string]*Property{
+				"serviceName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsservice.html#cfn-auditmanager-assessment-awsservice-servicename",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.AWSServices": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsservices.html",
+			Properties: map[string]*Property{
+				"AWSServices": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsservices.html#cfn-auditmanager-assessment-awsservices-awsservices",
+					ItemType:      "AWSService",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.AssessmentReportsDestination": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-assessmentreportsdestination.html",
+			Properties: map[string]*Property{
+				"destination": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-assessmentreportsdestination.html#cfn-auditmanager-assessment-assessmentreportsdestination-destination",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"destinationType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-assessmentreportsdestination.html#cfn-auditmanager-assessment-assessmentreportsdestination-destinationtype",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.Delegation": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html",
+			Properties: map[string]*Property{
+				"assessmentId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-assessmentid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"assessmentName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-assessmentname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"comment": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-comment",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"controlSetId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-controlsetid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"createdBy": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-createdby",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"creationTime": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-creationtime",
+					PrimitiveType: "Double",
+					UpdateType:    "Mutable",
+				},
+				"id": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-id",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"lastUpdated": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-lastupdated",
+					PrimitiveType: "Double",
+					UpdateType:    "Mutable",
+				},
+				"roleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-rolearn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"roleType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-roletype",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"status": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-status",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.Delegations": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegations.html",
+			Properties: map[string]*Property{
+				"Delegations": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegations.html#cfn-auditmanager-assessment-delegations-delegations",
+					ItemType:      "Delegation",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.Role": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-role.html",
+			Properties: map[string]*Property{
+				"roleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-role.html#cfn-auditmanager-assessment-role-rolearn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"roleType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-role.html#cfn-auditmanager-assessment-role-roletype",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.Roles": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-roles.html",
+			Properties: map[string]*Property{
+				"Roles": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-roles.html#cfn-auditmanager-assessment-roles-roles",
+					ItemType:      "Role",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.Scope": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-scope.html",
+			Properties: map[string]*Property{
+				"awsAccounts": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-scope.html#cfn-auditmanager-assessment-scope-awsaccounts",
+					Type:          "AWSAccounts",
+					UpdateType:    "Mutable",
+				},
+				"awsServices": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-scope.html#cfn-auditmanager-assessment-scope-awsservices",
+					Type:          "AWSServices",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::AuditManager::Assessment.Tags": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-tags.html",
+			Properties: map[string]*Property{
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-tags.html#cfn-auditmanager-assessment-tags-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::AutoScaling::AutoScalingGroup.InstancesDistribution": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html",
 			Properties: map[string]*Property{
@@ -6027,21 +6305,21 @@ var Cfn = Spec{
 				},
 			},
 		},
-		"AWS::AutoScaling::LaunchConfiguration.MetadataOption": &PropertyType{
-			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoption.html",
+		"AWS::AutoScaling::LaunchConfiguration.MetadataOptions": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoptions.html",
 			Properties: map[string]*Property{
 				"HttpEndpoint": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoption.html#cfn-autoscaling-launchconfig-metadataoption-httpendpoint",
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoptions.html#cfn-autoscaling-launchconfig-metadataoptions-httpendpoint",
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
 				"HttpPutResponseHopLimit": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoption.html#cfn-autoscaling-launchconfig-metadataoption-httpputresponsehoplimit",
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoptions.html#cfn-autoscaling-launchconfig-metadataoptions-httpputresponsehoplimit",
 					PrimitiveType: "Integer",
 					UpdateType:    "Mutable",
 				},
 				"HttpTokens": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoption.html#cfn-autoscaling-launchconfig-metadataoption-httptokens",
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoptions.html#cfn-autoscaling-launchconfig-metadataoptions-httptokens",
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
@@ -6661,13 +6939,11 @@ var Cfn = Spec{
 				"InstanceRole": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-instancerole",
 					PrimitiveType: "String",
-					Required:      true,
 					UpdateType:    "Immutable",
 				},
 				"InstanceTypes": &Property{
 					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-instancetypes",
 					PrimitiveItemType: "String",
-					Required:          true,
 					Type:              "List",
 					UpdateType:        "Immutable",
 				},
@@ -6685,7 +6961,6 @@ var Cfn = Spec{
 				"MinvCpus": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-minvcpus",
 					PrimitiveType: "Integer",
-					Required:      true,
 					UpdateType:    "Mutable",
 				},
 				"PlacementGroup": &Property{
@@ -6697,7 +6972,7 @@ var Cfn = Spec{
 					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-securitygroupids",
 					PrimitiveItemType: "String",
 					Type:              "List",
-					UpdateType:        "Immutable",
+					UpdateType:        "Mutable",
 				},
 				"SpotIamFleetRole": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-spotiamfleetrole",
@@ -6709,7 +6984,7 @@ var Cfn = Spec{
 					PrimitiveItemType: "String",
 					Required:          true,
 					Type:              "List",
-					UpdateType:        "Immutable",
+					UpdateType:        "Mutable",
 				},
 				"Tags": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-tags",
@@ -6780,6 +7055,11 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
+				"FargatePlatformConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-fargateplatformconfiguration",
+					Type:          "FargatePlatformConfiguration",
+					UpdateType:    "Mutable",
+				},
 				"Image": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-image",
 					PrimitiveType: "String",
@@ -6815,6 +7095,11 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-mountpoints",
 					ItemType:      "MountPoints",
 					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+				"NetworkConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-networkconfiguration",
+					Type:          "NetworkConfiguration",
 					UpdateType:    "Mutable",
 				},
 				"Privileged": &Property{
@@ -6925,6 +7210,16 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::Batch::JobDefinition.FargatePlatformConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-fargateplatformconfiguration.html",
+			Properties: map[string]*Property{
+				"PlatformVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-fargateplatformconfiguration.html#cfn-batch-jobdefinition-containerproperties-fargateplatformconfiguration-platformversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::Batch::JobDefinition.LinuxParameters": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html",
 			Properties: map[string]*Property{
@@ -6999,6 +7294,16 @@ var Cfn = Spec{
 				},
 				"SourceVolume": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Batch::JobDefinition.NetworkConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-networkconfiguration.html",
+			Properties: map[string]*Property{
+				"AssignPublicIp": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-networkconfiguration.html#cfn-batch-jobdefinition-containerproperties-networkconfiguration-assignpublicip",
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
@@ -10381,6 +10686,36 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::Cognito::UserPool.CustomEmailSender": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customemailsender.html",
+			Properties: map[string]*Property{
+				"LambdaArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customemailsender.html#cfn-cognito-userpool-customemailsender-lambdaarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"LambdaVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customemailsender.html#cfn-cognito-userpool-customemailsender-lambdaversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Cognito::UserPool.CustomSMSSender": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customsmssender.html",
+			Properties: map[string]*Property{
+				"LambdaArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customsmssender.html#cfn-cognito-userpool-customsmssender-lambdaarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"LambdaVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customsmssender.html#cfn-cognito-userpool-customsmssender-lambdaversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::Cognito::UserPool.DeviceConfiguration": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html",
 			Properties: map[string]*Property{
@@ -10454,13 +10789,28 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
+				"CustomEmailSender": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-customemailsender",
+					Type:          "CustomEmailSender",
+					UpdateType:    "Mutable",
+				},
 				"CustomMessage": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-custommessage",
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
+				"CustomSMSSender": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-customsmssender",
+					Type:          "CustomSMSSender",
+					UpdateType:    "Mutable",
+				},
 				"DefineAuthChallenge": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-defineauthchallenge",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"KMSKeyID": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-kmskeyid",
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
@@ -11915,6 +12265,7 @@ var Cfn = Spec{
 				},
 				"Parameters": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters",
+					PrimitiveType: "Json",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -12640,6 +12991,47 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html#cfn-datapipeline-pipeline-pipelinetags-value",
 					PrimitiveType: "String",
 					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::DevOpsGuru::NotificationChannel.NotificationChannelConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html",
+			Properties: map[string]*Property{
+				"Sns": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html#cfn-devopsguru-notificationchannel-notificationchannelconfig-sns",
+					Type:          "SnsChannelConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::DevOpsGuru::NotificationChannel.SnsChannelConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-snschannelconfig.html",
+			Properties: map[string]*Property{
+				"TopicArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-snschannelconfig.html#cfn-devopsguru-notificationchannel-snschannelconfig-topicarn",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::DevOpsGuru::ResourceCollection.CloudFormationCollectionFilter": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-cloudformationcollectionfilter.html",
+			Properties: map[string]*Property{
+				"StackNames": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-cloudformationcollectionfilter.html#cfn-devopsguru-resourcecollection-cloudformationcollectionfilter-stacknames",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::DevOpsGuru::ResourceCollection.ResourceCollectionFilter": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-resourcecollectionfilter.html",
+			Properties: map[string]*Property{
+				"CloudFormation": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-resourcecollectionfilter.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter-cloudformation",
+					Type:          "CloudFormationCollectionFilter",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -13387,6 +13779,16 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html#cfn-ec2-instance-elasticinferenceaccelerator-type",
 					PrimitiveType: "String",
 					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::Instance.EnclaveOptions": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html",
+			Properties: map[string]*Property{
+				"Enabled": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html#cfn-ec2-instance-enclaveoptions-enabled",
+					PrimitiveType: "Boolean",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -14195,6 +14597,547 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::EC2::NetworkInsightsAnalysis.AlternatePathHint": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-alternatepathhint.html",
+			Properties: map[string]*Property{
+				"ComponentArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-alternatepathhint.html#cfn-ec2-networkinsightsanalysis-alternatepathhint-componentarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ComponentId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-alternatepathhint.html#cfn-ec2-networkinsightsanalysis-alternatepathhint-componentid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.AnalysisAclRule": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html",
+			Properties: map[string]*Property{
+				"Cidr": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-cidr",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Egress": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-egress",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"PortRange": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-portrange",
+					Type:          "PortRange",
+					UpdateType:    "Mutable",
+				},
+				"Protocol": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-protocol",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"RuleAction": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-ruleaction",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"RuleNumber": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-rulenumber",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.AnalysisComponent": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysiscomponent.html",
+			Properties: map[string]*Property{
+				"Arn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysiscomponent.html#cfn-ec2-networkinsightsanalysis-analysiscomponent-arn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Id": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysiscomponent.html#cfn-ec2-networkinsightsanalysis-analysiscomponent-id",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerListener": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancerlistener.html",
+			Properties: map[string]*Property{
+				"InstancePort": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancerlistener.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancerlistener-instanceport",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"LoadBalancerPort": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancerlistener.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancerlistener-loadbalancerport",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerTarget": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html",
+			Properties: map[string]*Property{
+				"Address": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-address",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"AvailabilityZone": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-availabilityzone",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Instance": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-instance",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"Port": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-port",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.AnalysisPacketHeader": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html",
+			Properties: map[string]*Property{
+				"DestinationAddresses": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationaddresses",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"DestinationPortRanges": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationportranges",
+					ItemType:      "PortRange",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+				"Protocol": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-protocol",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SourceAddresses": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceaddresses",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"SourcePortRanges": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceportranges",
+					ItemType:      "PortRange",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.AnalysisRouteTableRoute": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html",
+			Properties: map[string]*Property{
+				"NatGatewayId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-natgatewayid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NetworkInterfaceId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-networkinterfaceid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Origin": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-origin",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"TransitGatewayId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-transitgatewayid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"VpcPeeringConnectionId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-vpcpeeringconnectionid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"destinationCidr": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-destinationcidr",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"destinationPrefixListId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-destinationprefixlistid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"egressOnlyInternetGatewayId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-egressonlyinternetgatewayid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"gatewayId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-gatewayid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"instanceId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-instanceid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.AnalysisSecurityGroupRule": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html",
+			Properties: map[string]*Property{
+				"Cidr": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-cidr",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Direction": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-direction",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"PortRange": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-portrange",
+					Type:          "PortRange",
+					UpdateType:    "Mutable",
+				},
+				"PrefixListId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-prefixlistid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Protocol": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-protocol",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SecurityGroupId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-securitygroupid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.Explanation": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html",
+			Properties: map[string]*Property{
+				"Acl": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-acl",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"AclRule": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-aclrule",
+					Type:          "AnalysisAclRule",
+					UpdateType:    "Mutable",
+				},
+				"Address": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-address",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Addresses": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-addresses",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"AttachedTo": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-attachedto",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"AvailabilityZones": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-availabilityzones",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"Cidrs": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-cidrs",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"ClassicLoadBalancerListener": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-classicloadbalancerlistener",
+					Type:          "AnalysisLoadBalancerListener",
+					UpdateType:    "Mutable",
+				},
+				"Component": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-component",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"CustomerGateway": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-customergateway",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"Destination": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destination",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"DestinationVpc": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destinationvpc",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"Direction": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-direction",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ElasticLoadBalancerListener": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-elasticloadbalancerlistener",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"ExplanationCode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-explanationcode",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"IngressRouteTable": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-ingressroutetable",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"InternetGateway": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-internetgateway",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"LoadBalancerArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"LoadBalancerListenerPort": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerlistenerport",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"LoadBalancerTarget": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertarget",
+					Type:          "AnalysisLoadBalancerTarget",
+					UpdateType:    "Mutable",
+				},
+				"LoadBalancerTargetGroup": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroup",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"LoadBalancerTargetGroups": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroups",
+					ItemType:      "AnalysisComponent",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+				"LoadBalancerTargetPort": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetport",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"MissingComponent": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-missingcomponent",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NatGateway": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-natgateway",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"NetworkInterface": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-networkinterface",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"PacketField": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-packetfield",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Port": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-port",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"PortRanges": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-portranges",
+					ItemType:      "PortRange",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+				"PrefixList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-prefixlist",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"Protocols": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-protocols",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"RouteTable": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetable",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"RouteTableRoute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetableroute",
+					Type:          "AnalysisRouteTableRoute",
+					UpdateType:    "Mutable",
+				},
+				"SecurityGroup": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroup",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"SecurityGroupRule": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygrouprule",
+					Type:          "AnalysisSecurityGroupRule",
+					UpdateType:    "Mutable",
+				},
+				"SecurityGroups": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroups",
+					ItemType:      "AnalysisComponent",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+				"SourceVpc": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-sourcevpc",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"State": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-state",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Subnet": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnet",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"SubnetRouteTable": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnetroutetable",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"Vpc": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpc",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"VpcPeeringConnection": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcpeeringconnection",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"VpnConnection": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpnconnection",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"VpnGateway": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpngateway",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"vpcEndpoint": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcendpoint",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.PathComponent": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html",
+			Properties: map[string]*Property{
+				"AclRule": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-aclrule",
+					Type:          "AnalysisAclRule",
+					UpdateType:    "Mutable",
+				},
+				"Component": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-component",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"DestinationVpc": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-destinationvpc",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"InboundHeader": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-inboundheader",
+					Type:          "AnalysisPacketHeader",
+					UpdateType:    "Mutable",
+				},
+				"OutboundHeader": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-outboundheader",
+					Type:          "AnalysisPacketHeader",
+					UpdateType:    "Mutable",
+				},
+				"RouteTableRoute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-routetableroute",
+					Type:          "AnalysisRouteTableRoute",
+					UpdateType:    "Mutable",
+				},
+				"SecurityGroupRule": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-securitygrouprule",
+					Type:          "AnalysisSecurityGroupRule",
+					UpdateType:    "Mutable",
+				},
+				"SequenceNumber": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"SourceVpc": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sourcevpc",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"Subnet": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-subnet",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+				"Vpc": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-vpc",
+					Type:          "AnalysisComponent",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis.PortRange": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html",
+			Properties: map[string]*Property{
+				"From": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-from",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"To": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-to",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::EC2::NetworkInterface.InstanceIpv6Address": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html",
 			Properties: map[string]*Property{
@@ -14570,6 +15513,11 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
+				"Priority": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-priority",
+					PrimitiveType: "Double",
+					UpdateType:    "Mutable",
+				},
 				"SpotPrice": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-spotprice",
 					PrimitiveType: "String",
@@ -14614,6 +15562,16 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces-privateipaddresses.html#cfn-ec2-spotfleet-privateipaddressspecification-privateipaddress",
 					PrimitiveType: "String",
 					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::SpotFleet.SpotCapacityRebalance": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotcapacityrebalance.html",
+			Properties: map[string]*Property{
+				"ReplacementStrategy": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotcapacityrebalance.html#cfn-ec2-spotfleet-spotcapacityrebalance-replacementstrategy",
+					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -14748,6 +15706,11 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					UpdateType:    "Immutable",
 				},
+				"InstancePoolsToUseCount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-instancepoolstousecount",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
 				"LaunchSpecifications": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications",
 					ItemType:      "SpotFleetLaunchSpecification",
@@ -14765,9 +15728,34 @@ var Cfn = Spec{
 					Type:          "LoadBalancersConfig",
 					UpdateType:    "Immutable",
 				},
+				"OnDemandAllocationStrategy": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-ondemandallocationstrategy",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"OnDemandMaxTotalPrice": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-ondemandmaxtotalprice",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"OnDemandTargetCapacity": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-ondemandtargetcapacity",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
 				"ReplaceUnhealthyInstances": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-replaceunhealthyinstances",
 					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"SpotMaintenanceStrategies": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotmaintenancestrategies",
+					Type:          "SpotMaintenanceStrategies",
+					UpdateType:    "Immutable",
+				},
+				"SpotMaxTotalPrice": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotmaxtotalprice",
+					PrimitiveType: "String",
 					UpdateType:    "Immutable",
 				},
 				"SpotPrice": &Property{
@@ -14817,6 +15805,16 @@ var Cfn = Spec{
 					ItemType:          "Tag",
 					Type:              "List",
 					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::SpotFleet.SpotMaintenanceStrategies": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotmaintenancestrategies.html",
+			Properties: map[string]*Property{
+				"CapacityRebalance": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotmaintenancestrategies.html#cfn-ec2-spotfleet-spotmaintenancestrategies-capacityrebalance",
+					Type:          "SpotCapacityRebalance",
+					UpdateType:    "Mutable",
 				},
 			},
 		},
@@ -15033,9 +16031,31 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::ECS::Service.DeploymentCircuitBreaker": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html",
+			Properties: map[string]*Property{
+				"Enable": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-enable",
+					PrimitiveType: "Boolean",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Rollback": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-rollback",
+					PrimitiveType: "Boolean",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::ECS::Service.DeploymentConfiguration": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html",
 			Properties: map[string]*Property{
+				"DeploymentCircuitBreaker": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-deploymentcircuitbreaker",
+					Type:          "DeploymentCircuitBreaker",
+					UpdateType:    "Mutable",
+				},
 				"MaximumPercent": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-maximumpercent",
 					PrimitiveType: "Integer",
@@ -17489,6 +18509,82 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::ElastiCache::User.Authentication": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-user-authentication.html",
+			Properties: map[string]*Property{
+				"PasswordCount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-user-authentication.html#cfn-elasticache-user-authentication-passwordcount",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"Type": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-user-authentication.html#cfn-elasticache-user-authentication-type",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::ElastiCache::User.PasswordList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-user-passwordlist.html",
+			Properties: map[string]*Property{
+				"PasswordList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-user-passwordlist.html#cfn-elasticache-user-passwordlist-passwordlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::ElastiCache::User.UserGroupIdList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-user-usergroupidlist.html",
+			Properties: map[string]*Property{
+				"UserGroupIdList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-user-usergroupidlist.html#cfn-elasticache-user-usergroupidlist-usergroupidlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::ElastiCache::UserGroup.ReplicationGroupIdList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-usergroup-replicationgroupidlist.html",
+			Properties: map[string]*Property{
+				"ReplicationGroupIdList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-usergroup-replicationgroupidlist.html#cfn-elasticache-usergroup-replicationgroupidlist-replicationgroupidlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::ElastiCache::UserGroup.UserGroupPendingChanges": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-usergroup-usergrouppendingchanges.html",
+			Properties: map[string]*Property{
+				"UserIdsToAdd": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-usergroup-usergrouppendingchanges.html#cfn-elasticache-usergroup-usergrouppendingchanges-useridstoadd",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"UserIdsToRemove": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-usergroup-usergrouppendingchanges.html#cfn-elasticache-usergroup-usergrouppendingchanges-useridstoremove",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::ElastiCache::UserGroup.UserIdList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-usergroup-useridlist.html",
+			Properties: map[string]*Property{
+				"UserIdList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-usergroup-useridlist.html#cfn-elasticache-usergroup-useridlist-useridlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
 		"AWS::ElasticBeanstalk::Application.ApplicationResourceLifecycleConfig": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html",
 			Properties: map[string]*Property{
@@ -18680,6 +19776,21 @@ var Cfn = Spec{
 		"AWS::Elasticsearch::Domain.DomainEndpointOptions": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html",
 			Properties: map[string]*Property{
+				"CustomEndpoint": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpoint",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"CustomEndpointCertificateArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpointcertificatearn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"CustomEndpointEnabled": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpointenabled",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
 				"EnforceHTTPS": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-enforcehttps",
 					PrimitiveType: "Boolean",
@@ -20186,16 +21297,6 @@ var Cfn = Spec{
 				},
 			},
 		},
-		"AWS::Glue::Database.DataLakePrincipal": &PropertyType{
-			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-datalakeprincipal.html",
-			Properties: map[string]*Property{
-				"DataLakePrincipalIdentifier": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-datalakeprincipal.html#cfn-glue-database-datalakeprincipal-datalakeprincipalidentifier",
-					PrimitiveType: "String",
-					UpdateType:    "Mutable",
-				},
-			},
-		},
 		"AWS::Glue::Database.DatabaseIdentifier": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseidentifier.html",
 			Properties: map[string]*Property{
@@ -20214,12 +21315,6 @@ var Cfn = Spec{
 		"AWS::Glue::Database.DatabaseInput": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html",
 			Properties: map[string]*Property{
-				"CreateTableDefaultPermissions": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-createtabledefaultpermissions",
-					ItemType:      "PrincipalPrivileges",
-					Type:          "List",
-					UpdateType:    "Mutable",
-				},
 				"Description": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-description",
 					PrimitiveType: "String",
@@ -20243,22 +21338,6 @@ var Cfn = Spec{
 				"TargetDatabase": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-targetdatabase",
 					Type:          "DatabaseIdentifier",
-					UpdateType:    "Mutable",
-				},
-			},
-		},
-		"AWS::Glue::Database.PrincipalPrivileges": &PropertyType{
-			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html",
-			Properties: map[string]*Property{
-				"Permissions": &Property{
-					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-permissions",
-					PrimitiveItemType: "String",
-					Type:              "List",
-					UpdateType:        "Mutable",
-				},
-				"Principal": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-principal",
-					Type:          "DataLakePrincipal",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -20484,6 +21563,46 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::Glue::Partition.SchemaId": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html",
+			Properties: map[string]*Property{
+				"RegistryName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-registryname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SchemaArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SchemaName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Glue::Partition.SchemaReference": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html",
+			Properties: map[string]*Property{
+				"SchameVersionId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schameversionid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SchemaId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaid",
+					Type:          "SchemaId",
+					UpdateType:    "Mutable",
+				},
+				"SchemaVersionNumber": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionnumber",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::Glue::Partition.SerdeInfo": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html",
 			Properties: map[string]*Property{
@@ -20569,6 +21688,11 @@ var Cfn = Spec{
 				"Parameters": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-parameters",
 					PrimitiveType: "Json",
+					UpdateType:    "Mutable",
+				},
+				"SchemaReference": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html#cfn-glue-partition-storagedescriptor-schemareference",
+					Type:          "SchemaReference",
 					UpdateType:    "Mutable",
 				},
 				"SerdeInfo": &Property{
@@ -20755,6 +21879,46 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::Glue::Table.SchemaId": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html",
+			Properties: map[string]*Property{
+				"RegistryName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-registryname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SchemaArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SchemaName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Glue::Table.SchemaReference": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html",
+			Properties: map[string]*Property{
+				"SchameVersionId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schameversionid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SchemaId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schemaid",
+					Type:          "SchemaId",
+					UpdateType:    "Mutable",
+				},
+				"SchemaVersionNumber": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schemaversionnumber",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::Glue::Table.SerdeInfo": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html",
 			Properties: map[string]*Property{
@@ -20840,6 +22004,11 @@ var Cfn = Spec{
 				"Parameters": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-parameters",
 					PrimitiveType: "Json",
+					UpdateType:    "Mutable",
+				},
+				"SchemaReference": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-schemareference",
+					Type:          "SchemaReference",
 					UpdateType:    "Mutable",
 				},
 				"SerdeInfo": &Property{
@@ -22110,6 +23279,239 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::GreengrassV2::ComponentVersion.ComponentDependencyRequirement": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentdependencyrequirement.html",
+			Properties: map[string]*Property{
+				"DependencyType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentdependencyrequirement.html#cfn-greengrassv2-componentversion-componentdependencyrequirement-dependencytype",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"VersionRequirement": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentdependencyrequirement.html#cfn-greengrassv2-componentversion-componentdependencyrequirement-versionrequirement",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::GreengrassV2::ComponentVersion.ComponentPlatform": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentplatform.html",
+			Properties: map[string]*Property{
+				"Attributes": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentplatform.html#cfn-greengrassv2-componentversion-componentplatform-attributes",
+					PrimitiveItemType: "String",
+					Type:              "Map",
+					UpdateType:        "Immutable",
+				},
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentplatform.html#cfn-greengrassv2-componentversion-componentplatform-name",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::GreengrassV2::ComponentVersion.LambdaContainerParams": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html",
+			Properties: map[string]*Property{
+				"Devices": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-devices",
+					ItemType:      "LambdaDeviceMount",
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+				"MemorySizeInKB": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-memorysizeinkb",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
+				"MountROSysfs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-mountrosysfs",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"Volumes": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-volumes",
+					ItemType:      "LambdaVolumeMount",
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::GreengrassV2::ComponentVersion.LambdaDeviceMount": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html",
+			Properties: map[string]*Property{
+				"AddGroupOwner": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html#cfn-greengrassv2-componentversion-lambdadevicemount-addgroupowner",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"Path": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html#cfn-greengrassv2-componentversion-lambdadevicemount-path",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"Permission": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html#cfn-greengrassv2-componentversion-lambdadevicemount-permission",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::GreengrassV2::ComponentVersion.LambdaEventSource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaeventsource.html",
+			Properties: map[string]*Property{
+				"Topic": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaeventsource.html#cfn-greengrassv2-componentversion-lambdaeventsource-topic",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"Type": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaeventsource.html#cfn-greengrassv2-componentversion-lambdaeventsource-type",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::GreengrassV2::ComponentVersion.LambdaExecutionParameters": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html",
+			Properties: map[string]*Property{
+				"EnvironmentVariables": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-environmentvariables",
+					PrimitiveItemType: "String",
+					Type:              "Map",
+					UpdateType:        "Immutable",
+				},
+				"EventSources": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-eventsources",
+					ItemType:      "LambdaEventSource",
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+				"ExecArgs": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-execargs",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"InputPayloadEncodingType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-inputpayloadencodingtype",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"LinuxProcessParams": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-linuxprocessparams",
+					Type:          "LambdaLinuxProcessParams",
+					UpdateType:    "Immutable",
+				},
+				"MaxIdleTimeInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxidletimeinseconds",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
+				"MaxInstancesCount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxinstancescount",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
+				"MaxQueueSize": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-maxqueuesize",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
+				"Pinned": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-pinned",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"StatusTimeoutInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-statustimeoutinseconds",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
+				"TimeoutInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-timeoutinseconds",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::GreengrassV2::ComponentVersion.LambdaFunctionRecipeSource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html",
+			Properties: map[string]*Property{
+				"ComponentDependencies": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentdependencies",
+					ItemType:      "ComponentDependencyRequirement",
+					Type:          "Map",
+					UpdateType:    "Immutable",
+				},
+				"ComponentLambdaParameters": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentlambdaparameters",
+					Type:          "LambdaExecutionParameters",
+					UpdateType:    "Immutable",
+				},
+				"ComponentName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ComponentPlatforms": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentplatforms",
+					ItemType:      "ComponentPlatform",
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+				"ComponentVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentversion",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"LambdaArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-lambdaarn",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::GreengrassV2::ComponentVersion.LambdaLinuxProcessParams": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html",
+			Properties: map[string]*Property{
+				"ContainerParams": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html#cfn-greengrassv2-componentversion-lambdalinuxprocessparams-containerparams",
+					Type:          "LambdaContainerParams",
+					UpdateType:    "Immutable",
+				},
+				"IsolationMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html#cfn-greengrassv2-componentversion-lambdalinuxprocessparams-isolationmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::GreengrassV2::ComponentVersion.LambdaVolumeMount": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html",
+			Properties: map[string]*Property{
+				"AddGroupOwner": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-addgroupowner",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"DestinationPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-destinationpath",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"Permission": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-permission",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"SourcePath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-sourcepath",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
 		"AWS::GuardDuty::Detector.CFNDataSourceConfigurations": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html",
 			Properties: map[string]*Property{
@@ -23250,6 +24652,33 @@ var Cfn = Spec{
 			Properties: map[string]*Property{
 				"ConfirmationUrl": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-httpurldestinationsummary.html#cfn-iot-topicruledestination-httpurldestinationsummary-confirmationurl",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::IoT::TopicRuleDestination.VpcDestinationProperties": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-vpcdestinationproperties.html",
+			Properties: map[string]*Property{
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-vpcdestinationproperties.html#cfn-iot-topicruledestination-vpcdestinationproperties-rolearn",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"SecurityGroups": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-vpcdestinationproperties.html#cfn-iot-topicruledestination-vpcdestinationproperties-securitygroups",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"SubnetIds": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-vpcdestinationproperties.html#cfn-iot-topicruledestination-vpcdestinationproperties-subnetids",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"VpcId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-vpcdestinationproperties.html#cfn-iot-topicruledestination-vpcdestinationproperties-vpcid",
 					PrimitiveType: "String",
 					UpdateType:    "Immutable",
 				},
@@ -24521,6 +25950,61 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::IoTSiteWise::AccessPolicy.AccessPolicyIdentity": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html",
+			Properties: map[string]*Property{
+				"User": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity-user",
+					Type:          "User",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTSiteWise::AccessPolicy.AccessPolicyResource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyresource.html",
+			Properties: map[string]*Property{
+				"Portal": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyresource.html#cfn-iotsitewise-accesspolicy-accesspolicyresource-portal",
+					Type:          "Portal",
+					UpdateType:    "Mutable",
+				},
+				"Project": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyresource.html#cfn-iotsitewise-accesspolicy-accesspolicyresource-project",
+					Type:          "Project",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTSiteWise::AccessPolicy.Portal": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-portal.html",
+			Properties: map[string]*Property{
+				"id": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-portal.html#cfn-iotsitewise-accesspolicy-portal-id",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTSiteWise::AccessPolicy.Project": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-project.html",
+			Properties: map[string]*Property{
+				"id": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-project.html#cfn-iotsitewise-accesspolicy-project-id",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTSiteWise::AccessPolicy.User": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-user.html",
+			Properties: map[string]*Property{
+				"id": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-user.html#cfn-iotsitewise-accesspolicy-user-id",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::IoTSiteWise::Asset.AssetHierarchy": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-asset-assethierarchy.html",
 			Properties: map[string]*Property{
@@ -24786,6 +26270,37 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::IoTSiteWise::Portal.MonitorErrorDetails": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-monitorerrordetails.html",
+			Properties: map[string]*Property{
+				"code": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-monitorerrordetails.html#cfn-iotsitewise-portal-monitorerrordetails-code",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"message": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-monitorerrordetails.html#cfn-iotsitewise-portal-monitorerrordetails-message",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTSiteWise::Portal.PortalStatus": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-portalstatus.html",
+			Properties: map[string]*Property{
+				"error": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-portalstatus.html#cfn-iotsitewise-portal-portalstatus-error",
+					Type:          "MonitorErrorDetails",
+					UpdateType:    "Mutable",
+				},
+				"state": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-portalstatus.html#cfn-iotsitewise-portal-portalstatus-state",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html",
 			Properties: map[string]*Property{
@@ -24799,6 +26314,351 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html#cfn-iotthingsgraph-flowtemplate-definitiondocument-text",
 					PrimitiveType: "String",
 					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::DeviceProfile.LoRaWANDeviceProfile": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html",
+			Properties: map[string]*Property{
+				"ClassBTimeout": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-classbtimeout",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"ClassCTimeout": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-classctimeout",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"MacVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-macversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"MaxDutyCycle": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-maxdutycycle",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"MaxEirp": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-maxeirp",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"PingSlotDr": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotdr",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"PingSlotFreq": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotfreq",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"PingSlotPeriod": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotperiod",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"RegParamsRevision": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-regparamsrevision",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"RfRegion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-rfregion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Supports32BitFCnt": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supports32bitfcnt",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"SupportsClassB": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsclassb",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"SupportsClassC": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsclassc",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"SupportsJoin": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsjoin",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::ServiceProfile.LoRaWANGetServiceProfileInfo": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html",
+			Properties: map[string]*Property{
+				"AddGwMetadata": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-addgwmetadata",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"ChannelMask": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-channelmask",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"DevStatusReqFreq": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-devstatusreqfreq",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"DlBucketSize": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-dlbucketsize",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"DlRate": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-dlrate",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"DlRatePolicy": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-dlratepolicy",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"DrMax": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-drmax",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"DrMin": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-drmin",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"HrAllowed": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-hrallowed",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"MinGwDiversity": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-mingwdiversity",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"NwkGeoLoc": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-nwkgeoloc",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"PrAllowed": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-prallowed",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"RaAllowed": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-raallowed",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"ReportDevStatusBattery": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-reportdevstatusbattery",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"ReportDevStatusMargin": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-reportdevstatusmargin",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"TargetPer": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-targetper",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"UlBucketSize": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-ulbucketsize",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"UlRate": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-ulrate",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"UlRatePolicy": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawangetserviceprofileinfo.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo-ulratepolicy",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::ServiceProfile.LoRaWANServiceProfile": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html",
+			Properties: map[string]*Property{
+				"AddGwMetadata": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-addgwmetadata",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessDevice.AbpV10X": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv10x.html",
+			Properties: map[string]*Property{
+				"DevAddr": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv10x.html#cfn-iotwireless-wirelessdevice-abpv10x-devaddr",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SessionKeys": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv10x.html#cfn-iotwireless-wirelessdevice-abpv10x-sessionkeys",
+					Type:          "SessionKeysAbpV10X",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessDevice.AbpV11": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv11.html",
+			Properties: map[string]*Property{
+				"DevAddr": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv11.html#cfn-iotwireless-wirelessdevice-abpv11-devaddr",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SessionKeys": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv11.html#cfn-iotwireless-wirelessdevice-abpv11-sessionkeys",
+					Type:          "SessionKeysAbpV11",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessDevice.LoRaWANDevice": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html",
+			Properties: map[string]*Property{
+				"AbpV10X": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-abpv10x",
+					Type:          "AbpV10X",
+					UpdateType:    "Mutable",
+				},
+				"AbpV11": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-abpv11",
+					Type:          "AbpV11",
+					UpdateType:    "Mutable",
+				},
+				"DevEui": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-deveui",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"DeviceProfileId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-deviceprofileid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"OtaaV10X": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-otaav10x",
+					Type:          "OtaaV10X",
+					UpdateType:    "Mutable",
+				},
+				"OtaaV11": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-otaav11",
+					Type:          "OtaaV11",
+					UpdateType:    "Mutable",
+				},
+				"ServiceProfileId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-serviceprofileid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessDevice.OtaaV10X": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav10x.html",
+			Properties: map[string]*Property{
+				"AppEui": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav10x.html#cfn-iotwireless-wirelessdevice-otaav10x-appeui",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"AppKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav10x.html#cfn-iotwireless-wirelessdevice-otaav10x-appkey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessDevice.OtaaV11": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav11.html",
+			Properties: map[string]*Property{
+				"AppKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav11.html#cfn-iotwireless-wirelessdevice-otaav11-appkey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"JoinEui": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav11.html#cfn-iotwireless-wirelessdevice-otaav11-joineui",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NwkKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav11.html#cfn-iotwireless-wirelessdevice-otaav11-nwkkey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessDevice.SessionKeysAbpV10X": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv10x.html",
+			Properties: map[string]*Property{
+				"AppSKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv10x.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv10x-appskey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NwkSKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv10x.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv10x-nwkskey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessDevice.SessionKeysAbpV11": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html",
+			Properties: map[string]*Property{
+				"AppSKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-appskey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"FNwkSIntKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-fnwksintkey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NwkSEncKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-nwksenckey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SNwkSIntKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-snwksintkey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessGateway.LoRaWANGateway": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessgateway-lorawangateway.html",
+			Properties: map[string]*Property{
+				"GatewayEui": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessgateway-lorawangateway.html#cfn-iotwireless-wirelessgateway-lorawangateway-gatewayeui",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"RfRegion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessgateway-lorawangateway.html#cfn-iotwireless-wirelessgateway-lorawangateway-rfregion",
+					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -24868,6 +26728,272 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::Kendra::DataSource.ConfluenceAttachmentConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html",
+			Properties: map[string]*Property{
+				"AttachmentFieldMappings": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html#cfn-kendra-datasource-confluenceattachmentconfiguration-attachmentfieldmappings",
+					Type:          "ConfluenceAttachmentFieldMappingsList",
+					UpdateType:    "Mutable",
+				},
+				"CrawlAttachments": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html#cfn-kendra-datasource-confluenceattachmentconfiguration-crawlattachments",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceAttachmentFieldMappingsList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentfieldmappingslist.html",
+			Properties: map[string]*Property{
+				"ConfluenceAttachmentFieldMappingsList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentfieldmappingslist.html#cfn-kendra-datasource-confluenceattachmentfieldmappingslist-confluenceattachmentfieldmappingslist",
+					ItemType:      "ConfluenceAttachmentToIndexFieldMapping",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceAttachmentToIndexFieldMapping": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmenttoindexfieldmapping.html",
+			Properties: map[string]*Property{
+				"DataSourceFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmenttoindexfieldmapping.html#cfn-kendra-datasource-confluenceattachmenttoindexfieldmapping-datasourcefieldname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"DateFieldFormat": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmenttoindexfieldmapping.html#cfn-kendra-datasource-confluenceattachmenttoindexfieldmapping-datefieldformat",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"IndexFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmenttoindexfieldmapping.html#cfn-kendra-datasource-confluenceattachmenttoindexfieldmapping-indexfieldname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceBlogConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogconfiguration.html",
+			Properties: map[string]*Property{
+				"BlogFieldMappings": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogconfiguration.html#cfn-kendra-datasource-confluenceblogconfiguration-blogfieldmappings",
+					Type:          "ConfluenceBlogFieldMappingsList",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceBlogFieldMappingsList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogfieldmappingslist.html",
+			Properties: map[string]*Property{
+				"ConfluenceBlogFieldMappingsList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogfieldmappingslist.html#cfn-kendra-datasource-confluenceblogfieldmappingslist-confluenceblogfieldmappingslist",
+					ItemType:      "ConfluenceBlogToIndexFieldMapping",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceBlogToIndexFieldMapping": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html",
+			Properties: map[string]*Property{
+				"DataSourceFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html#cfn-kendra-datasource-confluenceblogtoindexfieldmapping-datasourcefieldname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"DateFieldFormat": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html#cfn-kendra-datasource-confluenceblogtoindexfieldmapping-datefieldformat",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"IndexFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html#cfn-kendra-datasource-confluenceblogtoindexfieldmapping-indexfieldname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html",
+			Properties: map[string]*Property{
+				"AttachmentConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-attachmentconfiguration",
+					Type:          "ConfluenceAttachmentConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"BlogConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-blogconfiguration",
+					Type:          "ConfluenceBlogConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"ExclusionPatterns": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-exclusionpatterns",
+					Type:          "DataSourceInclusionsExclusionsStrings",
+					UpdateType:    "Mutable",
+				},
+				"InclusionPatterns": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-inclusionpatterns",
+					Type:          "DataSourceInclusionsExclusionsStrings",
+					UpdateType:    "Mutable",
+				},
+				"PageConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-pageconfiguration",
+					Type:          "ConfluencePageConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"SecretArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-secretarn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"ServerUrl": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-serverurl",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"SpaceConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-spaceconfiguration",
+					Type:          "ConfluenceSpaceConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"Version": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-version",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"VpcConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-vpcconfiguration",
+					Type:          "DataSourceVpcConfiguration",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluencePageConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepageconfiguration.html",
+			Properties: map[string]*Property{
+				"PageFieldMappings": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepageconfiguration.html#cfn-kendra-datasource-confluencepageconfiguration-pagefieldmappings",
+					Type:          "ConfluencePageFieldMappingsList",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluencePageFieldMappingsList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagefieldmappingslist.html",
+			Properties: map[string]*Property{
+				"ConfluencePageFieldMappingsList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagefieldmappingslist.html#cfn-kendra-datasource-confluencepagefieldmappingslist-confluencepagefieldmappingslist",
+					ItemType:      "ConfluencePageToIndexFieldMapping",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluencePageToIndexFieldMapping": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagetoindexfieldmapping.html",
+			Properties: map[string]*Property{
+				"DataSourceFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagetoindexfieldmapping.html#cfn-kendra-datasource-confluencepagetoindexfieldmapping-datasourcefieldname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"DateFieldFormat": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagetoindexfieldmapping.html#cfn-kendra-datasource-confluencepagetoindexfieldmapping-datefieldformat",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"IndexFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagetoindexfieldmapping.html#cfn-kendra-datasource-confluencepagetoindexfieldmapping-indexfieldname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceSpaceConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html",
+			Properties: map[string]*Property{
+				"CrawlArchivedSpaces": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-crawlarchivedspaces",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"CrawlPersonalSpaces": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-crawlpersonalspaces",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"ExcludeSpaces": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-excludespaces",
+					Type:          "ConfluenceSpaceList",
+					UpdateType:    "Mutable",
+				},
+				"IncludeSpaces": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-includespaces",
+					Type:          "ConfluenceSpaceList",
+					UpdateType:    "Mutable",
+				},
+				"SpaceFieldMappings": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-spacefieldmappings",
+					Type:          "ConfluenceSpaceFieldMappingsList",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceSpaceFieldMappingsList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacefieldmappingslist.html",
+			Properties: map[string]*Property{
+				"ConfluenceSpaceFieldMappingsList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacefieldmappingslist.html#cfn-kendra-datasource-confluencespacefieldmappingslist-confluencespacefieldmappingslist",
+					ItemType:      "ConfluenceSpaceToIndexFieldMapping",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceSpaceList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacelist.html",
+			Properties: map[string]*Property{
+				"ConfluenceSpaceList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacelist.html#cfn-kendra-datasource-confluencespacelist-confluencespacelist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::DataSource.ConfluenceSpaceToIndexFieldMapping": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html",
+			Properties: map[string]*Property{
+				"DataSourceFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-datasourcefieldname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"DateFieldFormat": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-datefieldformat",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"IndexFieldName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-indexfieldname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::Kendra::DataSource.ConnectionConfiguration": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html",
 			Properties: map[string]*Property{
@@ -24906,6 +27032,11 @@ var Cfn = Spec{
 		"AWS::Kendra::DataSource.DataSourceConfiguration": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html",
 			Properties: map[string]*Property{
+				"ConfluenceConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-confluenceconfiguration",
+					Type:          "ConfluenceConfiguration",
+					UpdateType:    "Mutable",
+				},
 				"DatabaseConfiguration": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-databaseconfiguration",
 					Type:          "DatabaseConfiguration",
@@ -25052,6 +27183,11 @@ var Cfn = Spec{
 		"AWS::Kendra::DataSource.OneDriveConfiguration": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html",
 			Properties: map[string]*Property{
+				"DisableLocalGroups": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-disablelocalgroups",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
 				"ExclusionPatterns": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-exclusionpatterns",
 					Type:          "DataSourceInclusionsExclusionsStrings",
@@ -25512,6 +27648,11 @@ var Cfn = Spec{
 					PrimitiveType: "Boolean",
 					UpdateType:    "Mutable",
 				},
+				"DisableLocalGroups": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-disablelocalgroups",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
 				"DocumentTitleFieldName": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-documenttitlefieldname",
 					PrimitiveType: "String",
@@ -25667,6 +27808,64 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::Kendra::Index.JsonTokenTypeConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jsontokentypeconfiguration.html",
+			Properties: map[string]*Property{
+				"GroupAttributeField": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jsontokentypeconfiguration.html#cfn-kendra-index-jsontokentypeconfiguration-groupattributefield",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"UserNameAttributeField": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jsontokentypeconfiguration.html#cfn-kendra-index-jsontokentypeconfiguration-usernameattributefield",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::Index.JwtTokenTypeConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html",
+			Properties: map[string]*Property{
+				"ClaimRegex": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-claimregex",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"GroupAttributeField": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-groupattributefield",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Issuer": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-issuer",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"KeyLocation": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-keylocation",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"SecretManagerArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-secretmanagerarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"URL": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-url",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"UserNameAttributeField": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-usernameattributefield",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::Kendra::Index.Relevance": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html",
 			Properties: map[string]*Property{
@@ -25738,6 +27937,32 @@ var Cfn = Spec{
 				"TagList": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-taglist.html#cfn-kendra-index-taglist-taglist",
 					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::Index.UserTokenConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html",
+			Properties: map[string]*Property{
+				"JsonTokenTypeConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html#cfn-kendra-index-usertokenconfiguration-jsontokentypeconfiguration",
+					Type:          "JsonTokenTypeConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"JwtTokenTypeConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html#cfn-kendra-index-usertokenconfiguration-jwttokentypeconfiguration",
+					Type:          "JwtTokenTypeConfiguration",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Kendra::Index.UserTokenConfigurationList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfigurationlist.html",
+			Properties: map[string]*Property{
+				"UserTokenConfigurationList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfigurationlist.html#cfn-kendra-index-usertokenconfigurationlist-usertokenconfigurationlist",
+					ItemType:      "UserTokenConfiguration",
 					Type:          "List",
 					UpdateType:    "Mutable",
 				},
@@ -28042,6 +30267,17 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::Lambda::EventSourceMapping.Endpoints": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-endpoints.html",
+			Properties: map[string]*Property{
+				"KafkaBootstrapServers": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-endpoints.html#cfn-lambda-eventsourcemapping-endpoints-kafkabootstrapservers",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+			},
+		},
 		"AWS::Lambda::EventSourceMapping.OnFailure": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-onfailure.html",
 			Properties: map[string]*Property{
@@ -28049,6 +30285,16 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-onfailure.html#cfn-lambda-eventsourcemapping-onfailure-destination",
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Lambda::EventSourceMapping.SelfManagedEventSource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedeventsource.html",
+			Properties: map[string]*Property{
+				"Endpoints": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedeventsource.html#cfn-lambda-eventsourcemapping-selfmanagedeventsource-endpoints",
+					Type:          "Endpoints",
+					UpdateType:    "Immutable",
 				},
 			},
 		},
@@ -28070,6 +30316,11 @@ var Cfn = Spec{
 		"AWS::Lambda::Function.Code": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html",
 			Properties: map[string]*Property{
+				"ImageUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-imageuri",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
 				"S3Bucket": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3bucket",
 					PrimitiveType: "String",
@@ -28126,6 +30377,28 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-filesystemconfig.html#cfn-lambda-function-filesystemconfig-localmountpath",
 					PrimitiveType: "String",
 					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::Lambda::Function.ImageConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-imageconfig.html",
+			Properties: map[string]*Property{
+				"Command": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-imageconfig.html#cfn-lambda-function-imageconfig-command",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"EntryPoint": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-imageconfig.html#cfn-lambda-function-imageconfig-entrypoint",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"WorkingDirectory": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-imageconfig.html#cfn-lambda-function-imageconfig-workingdirectory",
+					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -28187,6 +30460,335 @@ var Cfn = Spec{
 				"ProvisionedConcurrentExecutions": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html#cfn-lambda-version-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions",
 					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::Grant.AllowedOperationList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-allowedoperationlist.html",
+			Properties: map[string]*Property{
+				"AllowedOperationList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-allowedoperationlist.html#cfn-licensemanager-grant-allowedoperationlist-allowedoperationlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::Grant.ArnList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-arnlist.html",
+			Properties: map[string]*Property{
+				"ArnList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-arnlist.html#cfn-licensemanager-grant-arnlist-arnlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::Grant.Filter": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-filter.html",
+			Properties: map[string]*Property{
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-filter.html#cfn-licensemanager-grant-filter-name",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Values": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-filter.html#cfn-licensemanager-grant-filter-values",
+					Required:      true,
+					Type:          "StringList",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::Grant.FilterList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-filterlist.html",
+			Properties: map[string]*Property{
+				"FilterList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-filterlist.html#cfn-licensemanager-grant-filterlist-filterlist",
+					ItemType:      "Filter",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::Grant.StringList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-stringlist.html",
+			Properties: map[string]*Property{
+				"StringList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-stringlist.html#cfn-licensemanager-grant-stringlist-stringlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::Grant.TagList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-taglist.html",
+			Properties: map[string]*Property{
+				"TagList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-grant-taglist.html#cfn-licensemanager-grant-taglist-taglist",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.ArnList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-arnlist.html",
+			Properties: map[string]*Property{
+				"ArnList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-arnlist.html#cfn-licensemanager-license-arnlist-arnlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.BorrowConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html",
+			Properties: map[string]*Property{
+				"AllowEarlyCheckIn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html#cfn-licensemanager-license-borrowconfiguration-allowearlycheckin",
+					PrimitiveType: "Boolean",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"MaxTimeToLiveInMinutes": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html#cfn-licensemanager-license-borrowconfiguration-maxtimetoliveinminutes",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.ConsumptionConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html",
+			Properties: map[string]*Property{
+				"BorrowConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html#cfn-licensemanager-license-consumptionconfiguration-borrowconfiguration",
+					Type:          "BorrowConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"ProvisionalConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html#cfn-licensemanager-license-consumptionconfiguration-provisionalconfiguration",
+					Type:          "ProvisionalConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"RenewType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html#cfn-licensemanager-license-consumptionconfiguration-renewtype",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.Entitlement": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html",
+			Properties: map[string]*Property{
+				"AllowCheckIn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-allowcheckin",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"CheckoutRules": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-checkoutrules",
+					Type:          "RuleList",
+					UpdateType:    "Mutable",
+				},
+				"MaxCount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-maxcount",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-name",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Overage": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-overage",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"Unit": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-unit",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Value": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-value",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.EntitlementList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlementlist.html",
+			Properties: map[string]*Property{
+				"EntitlementList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlementlist.html#cfn-licensemanager-license-entitlementlist-entitlementlist",
+					ItemType:      "Entitlement",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.Filter": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-filter.html",
+			Properties: map[string]*Property{
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-filter.html#cfn-licensemanager-license-filter-name",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Values": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-filter.html#cfn-licensemanager-license-filter-values",
+					Required:      true,
+					Type:          "StringList",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.FilterList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-filterlist.html",
+			Properties: map[string]*Property{
+				"FilterList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-filterlist.html#cfn-licensemanager-license-filterlist-filterlist",
+					ItemType:      "Filter",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.IssuerData": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-issuerdata.html",
+			Properties: map[string]*Property{
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-issuerdata.html#cfn-licensemanager-license-issuerdata-name",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"SignKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-issuerdata.html#cfn-licensemanager-license-issuerdata-signkey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.Metadata": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-metadata.html",
+			Properties: map[string]*Property{
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-metadata.html#cfn-licensemanager-license-metadata-name",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Value": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-metadata.html#cfn-licensemanager-license-metadata-value",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.MetadataList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-metadatalist.html",
+			Properties: map[string]*Property{
+				"MetadataList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-metadatalist.html#cfn-licensemanager-license-metadatalist-metadatalist",
+					ItemType:      "Metadata",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.ProvisionalConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-provisionalconfiguration.html",
+			Properties: map[string]*Property{
+				"MaxTimeToLiveInMinutes": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-provisionalconfiguration.html#cfn-licensemanager-license-provisionalconfiguration-maxtimetoliveinminutes",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.Rule": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-rule.html",
+			Properties: map[string]*Property{
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-rule.html#cfn-licensemanager-license-rule-name",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Unit": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-rule.html#cfn-licensemanager-license-rule-unit",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Value": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-rule.html#cfn-licensemanager-license-rule-value",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.RuleList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-rulelist.html",
+			Properties: map[string]*Property{
+				"RuleList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-rulelist.html#cfn-licensemanager-license-rulelist-rulelist",
+					ItemType:      "Rule",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.StringList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-stringlist.html",
+			Properties: map[string]*Property{
+				"StringList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-stringlist.html#cfn-licensemanager-license-stringlist-stringlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.TagList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-taglist.html",
+			Properties: map[string]*Property{
+				"TagList": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-taglist.html#cfn-licensemanager-license-taglist-taglist",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License.ValidityDateFormat": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-validitydateformat.html",
+			Properties: map[string]*Property{
+				"Begin": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-validitydateformat.html#cfn-licensemanager-license-validitydateformat-begin",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"End": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-validitydateformat.html#cfn-licensemanager-license-validitydateformat-end",
+					PrimitiveType: "String",
 					Required:      true,
 					UpdateType:    "Mutable",
 				},
@@ -28509,6 +31111,134 @@ var Cfn = Spec{
 					PrimitiveItemType: "String",
 					Type:              "List",
 					UpdateType:        "Immutable",
+				},
+			},
+		},
+		"AWS::MWAA::Environment.AirflowConfigurationOptions": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-airflowconfigurationoptions.html",
+		},
+		"AWS::MWAA::Environment.LastUpdate": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-lastupdate.html",
+			Properties: map[string]*Property{
+				"CreatedAt": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-lastupdate.html#cfn-mwaa-environment-lastupdate-createdat",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Error": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-lastupdate.html#cfn-mwaa-environment-lastupdate-error",
+					Type:          "UpdateError",
+					UpdateType:    "Mutable",
+				},
+				"Status": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-lastupdate.html#cfn-mwaa-environment-lastupdate-status",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::MWAA::Environment.LoggingConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html",
+			Properties: map[string]*Property{
+				"DagProcessingLogs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-dagprocessinglogs",
+					Type:          "ModuleLoggingConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"SchedulerLogs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-schedulerlogs",
+					Type:          "ModuleLoggingConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"TaskLogs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-tasklogs",
+					Type:          "ModuleLoggingConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"WebserverLogs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-webserverlogs",
+					Type:          "ModuleLoggingConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"WorkerLogs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-workerlogs",
+					Type:          "ModuleLoggingConfiguration",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::MWAA::Environment.ModuleLoggingConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html",
+			Properties: map[string]*Property{
+				"CloudWatchLogGroupArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-cloudwatchloggrouparn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Enabled": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-enabled",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"LogLevel": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-loglevel",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::MWAA::Environment.NetworkConfiguration": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-networkconfiguration.html",
+			Properties: map[string]*Property{
+				"SecurityGroupIds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-networkconfiguration.html#cfn-mwaa-environment-networkconfiguration-securitygroupids",
+					Type:          "SecurityGroupList",
+					UpdateType:    "Immutable",
+				},
+				"SubnetIds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-networkconfiguration.html#cfn-mwaa-environment-networkconfiguration-subnetids",
+					Type:          "SubnetList",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::MWAA::Environment.SecurityGroupList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-securitygrouplist.html",
+			Properties: map[string]*Property{
+				"SecurityGroupList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-securitygrouplist.html#cfn-mwaa-environment-securitygrouplist-securitygrouplist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+			},
+		},
+		"AWS::MWAA::Environment.SubnetList": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-subnetlist.html",
+			Properties: map[string]*Property{
+				"SubnetList": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-subnetlist.html#cfn-mwaa-environment-subnetlist-subnetlist",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+			},
+		},
+		"AWS::MWAA::Environment.TagMap": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-tagmap.html",
+		},
+		"AWS::MWAA::Environment.UpdateError": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-updateerror.html",
+			Properties: map[string]*Property{
+				"ErrorCode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-updateerror.html#cfn-mwaa-environment-updateerror-errorcode",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ErrorMessage": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-updateerror.html#cfn-mwaa-environment-updateerror-errormessage",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
 				},
 			},
 		},
@@ -32714,6 +35444,7 @@ var Cfn = Spec{
 				"SpekeKeyProvider": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafencryption.html#cfn-mediapackage-packagingconfiguration-cmafencryption-spekekeyprovider",
 					Required:      true,
+					Type:          "SpekeKeyProvider",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -32746,6 +35477,7 @@ var Cfn = Spec{
 				"SpekeKeyProvider": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashencryption.html#cfn-mediapackage-packagingconfiguration-dashencryption-spekekeyprovider",
 					Required:      true,
+					Type:          "SpekeKeyProvider",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -32829,6 +35561,7 @@ var Cfn = Spec{
 				"SpekeKeyProvider": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsencryption.html#cfn-mediapackage-packagingconfiguration-hlsencryption-spekekeyprovider",
 					Required:      true,
+					Type:          "SpekeKeyProvider",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -32901,6 +35634,7 @@ var Cfn = Spec{
 				"SpekeKeyProvider": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssencryption.html#cfn-mediapackage-packagingconfiguration-mssencryption-spekekeyprovider",
 					Required:      true,
+					Type:          "SpekeKeyProvider",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -33098,17 +35832,6 @@ var Cfn = Spec{
 				},
 			},
 		},
-		"AWS::NetworkFirewall::Firewall.Tags": &PropertyType{
-			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewall-tags.html",
-			Properties: map[string]*Property{
-				"Tags": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewall-tags.html#cfn-networkfirewall-firewall-tags-tags",
-					ItemType:      "Tag",
-					Type:          "List",
-					UpdateType:    "Mutable",
-				},
-			},
-		},
 		"AWS::NetworkFirewall::FirewallPolicy.ActionDefinition": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-actiondefinition.html",
 			Properties: map[string]*Property{
@@ -33268,17 +35991,6 @@ var Cfn = Spec{
 				"StatelessRuleGroupReferences": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statelessrulegroupreferences.html#cfn-networkfirewall-firewallpolicy-statelessrulegroupreferences-statelessrulegroupreferences",
 					ItemType:      "StatelessRuleGroupReference",
-					Type:          "List",
-					UpdateType:    "Mutable",
-				},
-			},
-		},
-		"AWS::NetworkFirewall::FirewallPolicy.Tags": &PropertyType{
-			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-tags.html",
-			Properties: map[string]*Property{
-				"Tags": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-tags.html#cfn-networkfirewall-firewallpolicy-tags-tags",
-					ItemType:      "Tag",
 					Type:          "List",
 					UpdateType:    "Mutable",
 				},
@@ -33797,17 +36509,6 @@ var Cfn = Spec{
 				"TCPFlags": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-tcpflags.html#cfn-networkfirewall-rulegroup-tcpflags-tcpflags",
 					ItemType:      "TCPFlagField",
-					Type:          "List",
-					UpdateType:    "Mutable",
-				},
-			},
-		},
-		"AWS::NetworkFirewall::RuleGroup.Tags": &PropertyType{
-			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-tags.html",
-			Properties: map[string]*Property{
-				"Tags": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-tags.html#cfn-networkfirewall-rulegroup-tags-tags",
-					ItemType:      "Tag",
 					Type:          "List",
 					UpdateType:    "Mutable",
 				},
@@ -36683,6 +39384,17 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::S3::Bucket.ReplicaModifications": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicamodifications.html",
+			Properties: map[string]*Property{
+				"Status": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicamodifications.html#cfn-s3-bucket-replicamodifications-status",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::S3::Bucket.ReplicationConfiguration": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html",
 			Properties: map[string]*Property{
@@ -36984,6 +39696,11 @@ var Cfn = Spec{
 		"AWS::S3::Bucket.ServerSideEncryptionRule": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html",
 			Properties: map[string]*Property{
+				"BucketKeyEnabled": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-bucketkeyenabled",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
 				"ServerSideEncryptionByDefault": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault",
 					Type:          "ServerSideEncryptionByDefault",
@@ -36994,6 +39711,11 @@ var Cfn = Spec{
 		"AWS::S3::Bucket.SourceSelectionCriteria": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html",
 			Properties: map[string]*Property{
+				"ReplicaModifications": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html#cfn-s3-bucket-sourceselectioncriteria-replicamodifications",
+					Type:          "ReplicaModifications",
+					UpdateType:    "Mutable",
+				},
 				"SseKmsEncryptedObjects": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html#cfn-s3-bucket-sourceselectioncriteria-ssekmsencryptedobjects",
 					Type:          "SseKmsEncryptedObjects",
@@ -38186,6 +40908,399 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::SageMaker::DataQualityJobDefinition.ClusterConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html",
+			Properties: map[string]*Property{
+				"InstanceCount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html#cfn-sagemaker-dataqualityjobdefinition-clusterconfig-instancecount",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"InstanceType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html#cfn-sagemaker-dataqualityjobdefinition-clusterconfig-instancetype",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"VolumeKmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html#cfn-sagemaker-dataqualityjobdefinition-clusterconfig-volumekmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"VolumeSizeInGB": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html#cfn-sagemaker-dataqualityjobdefinition-clusterconfig-volumesizeingb",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.ConstraintsResource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-constraintsresource.html",
+			Properties: map[string]*Property{
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-constraintsresource.html#cfn-sagemaker-dataqualityjobdefinition-constraintsresource-s3uri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.DataQualityAppSpecification": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html",
+			Properties: map[string]*Property{
+				"ContainerArguments": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-containerarguments",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"ContainerEntrypoint": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-containerentrypoint",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"Environment": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-environment",
+					Type:          "Environment",
+					UpdateType:    "Immutable",
+				},
+				"ImageUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-imageuri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"PostAnalyticsProcessorSourceUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-postanalyticsprocessorsourceuri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"RecordPreprocessorSourceUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-recordpreprocessorsourceuri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.DataQualityBaselineConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html",
+			Properties: map[string]*Property{
+				"BaseliningJobName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-baseliningjobname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ConstraintsResource": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-constraintsresource",
+					Type:          "ConstraintsResource",
+					UpdateType:    "Immutable",
+				},
+				"StatisticsResource": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-statisticsresource",
+					Type:          "StatisticsResource",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.DataQualityJobInput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityjobinput.html",
+			Properties: map[string]*Property{
+				"EndpointInput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityjobinput.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjobinput-endpointinput",
+					Required:      true,
+					Type:          "EndpointInput",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.EndpointInput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html",
+			Properties: map[string]*Property{
+				"EndpointName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-endpointname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"LocalPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-localpath",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"S3DataDistributionType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-s3datadistributiontype",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3InputMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-s3inputmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.Environment": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-environment.html",
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.MonitoringOutput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutput.html",
+			Properties: map[string]*Property{
+				"S3Output": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutput.html#cfn-sagemaker-dataqualityjobdefinition-monitoringoutput-s3output",
+					Required:      true,
+					Type:          "S3Output",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.MonitoringOutputConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutputconfig.html",
+			Properties: map[string]*Property{
+				"KmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-dataqualityjobdefinition-monitoringoutputconfig-kmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"MonitoringOutputs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-dataqualityjobdefinition-monitoringoutputconfig-monitoringoutputs",
+					ItemType:      "MonitoringOutput",
+					Required:      true,
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.MonitoringResources": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringresources.html",
+			Properties: map[string]*Property{
+				"ClusterConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringresources.html#cfn-sagemaker-dataqualityjobdefinition-monitoringresources-clusterconfig",
+					Required:      true,
+					Type:          "ClusterConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.NetworkConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-networkconfig.html",
+			Properties: map[string]*Property{
+				"EnableInterContainerTrafficEncryption": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-networkconfig.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig-enableintercontainertrafficencryption",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"EnableNetworkIsolation": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-networkconfig.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig-enablenetworkisolation",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"VpcConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-networkconfig.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig-vpcconfig",
+					Type:          "VpcConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.S3Output": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-s3output.html",
+			Properties: map[string]*Property{
+				"LocalPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-s3output.html#cfn-sagemaker-dataqualityjobdefinition-s3output-localpath",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"S3UploadMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-s3output.html#cfn-sagemaker-dataqualityjobdefinition-s3output-s3uploadmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-s3output.html#cfn-sagemaker-dataqualityjobdefinition-s3output-s3uri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.StatisticsResource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-statisticsresource.html",
+			Properties: map[string]*Property{
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-statisticsresource.html#cfn-sagemaker-dataqualityjobdefinition-statisticsresource-s3uri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.StoppingCondition": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-stoppingcondition.html",
+			Properties: map[string]*Property{
+				"MaxRuntimeInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-stoppingcondition.html#cfn-sagemaker-dataqualityjobdefinition-stoppingcondition-maxruntimeinseconds",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DataQualityJobDefinition.VpcConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-vpcconfig.html",
+			Properties: map[string]*Property{
+				"SecurityGroupIds": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-vpcconfig.html#cfn-sagemaker-dataqualityjobdefinition-vpcconfig-securitygroupids",
+					PrimitiveItemType: "String",
+					Required:          true,
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"Subnets": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-vpcconfig.html#cfn-sagemaker-dataqualityjobdefinition-vpcconfig-subnets",
+					PrimitiveItemType: "String",
+					Required:          true,
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Device.Device": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html",
+			Properties: map[string]*Property{
+				"Description": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html#cfn-sagemaker-device-device-description",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"DeviceName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html#cfn-sagemaker-device-device-devicename",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"IotThingName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html#cfn-sagemaker-device-device-iotthingname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DeviceFleet.EdgeOutputConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-devicefleet-edgeoutputconfig.html",
+			Properties: map[string]*Property{
+				"KmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-devicefleet-edgeoutputconfig.html#cfn-sagemaker-devicefleet-edgeoutputconfig-kmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"S3OutputLocation": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-devicefleet-edgeoutputconfig.html#cfn-sagemaker-devicefleet-edgeoutputconfig-s3outputlocation",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Endpoint.Alarm": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-alarm.html",
+			Properties: map[string]*Property{
+				"AlarmName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-alarm.html#cfn-sagemaker-endpoint-alarm-alarmname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Endpoint.AutoRollbackConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-autorollbackconfig.html",
+			Properties: map[string]*Property{
+				"Alarms": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-autorollbackconfig.html#cfn-sagemaker-endpoint-autorollbackconfig-alarms",
+					ItemType:      "Alarm",
+					Required:      true,
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Endpoint.BlueGreenUpdatePolicy": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html",
+			Properties: map[string]*Property{
+				"MaximumExecutionTimeoutInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-maximumexecutiontimeoutinseconds",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"TerminationWaitInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-terminationwaitinseconds",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"TrafficRoutingConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-trafficroutingconfiguration",
+					Required:      true,
+					Type:          "TrafficRoutingConfig",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Endpoint.CapacitySize": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html",
+			Properties: map[string]*Property{
+				"Type": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-type",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Value": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-value",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Endpoint.DeploymentConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html",
+			Properties: map[string]*Property{
+				"AutoRollbackConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-autorollbackconfiguration",
+					Type:          "AutoRollbackConfig",
+					UpdateType:    "Mutable",
+				},
+				"BlueGreenUpdatePolicy": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-bluegreenupdatepolicy",
+					Required:      true,
+					Type:          "BlueGreenUpdatePolicy",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Endpoint.TrafficRoutingConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html",
+			Properties: map[string]*Property{
+				"CanarySize": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-canarysize",
+					Type:          "CapacitySize",
+					UpdateType:    "Mutable",
+				},
+				"Type": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-type",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"WaitIntervalInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-waitintervalinseconds",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::SageMaker::Endpoint.VariantProperty": &PropertyType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-variantproperty.html",
 			Properties: map[string]*Property{
@@ -38381,6 +41496,813 @@ var Cfn = Spec{
 				},
 				"Subnets": &Property{
 					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html#cfn-sagemaker-model-vpcconfig-subnets",
+					PrimitiveItemType: "String",
+					Required:          true,
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.ClusterConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html",
+			Properties: map[string]*Property{
+				"InstanceCount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-instancecount",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"InstanceType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-instancetype",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"VolumeKmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-volumekmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"VolumeSizeInGB": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-volumesizeingb",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.ConstraintsResource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-constraintsresource.html",
+			Properties: map[string]*Property{
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-constraintsresource.html#cfn-sagemaker-modelbiasjobdefinition-constraintsresource-s3uri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.EndpointInput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html",
+			Properties: map[string]*Property{
+				"EndTimeOffset": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-endtimeoffset",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"EndpointName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-endpointname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"FeaturesAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-featuresattribute",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"InferenceAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-inferenceattribute",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"LocalPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-localpath",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"ProbabilityAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-probabilityattribute",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ProbabilityThresholdAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-probabilitythresholdattribute",
+					PrimitiveType: "Double",
+					UpdateType:    "Immutable",
+				},
+				"S3DataDistributionType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-s3datadistributiontype",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3InputMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-s3inputmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"StartTimeOffset": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-starttimeoffset",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.Environment": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-environment.html",
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.ModelBiasAppSpecification": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html",
+			Properties: map[string]*Property{
+				"ConfigUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-configuri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"Environment": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-environment",
+					Type:          "Environment",
+					UpdateType:    "Immutable",
+				},
+				"ImageUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-imageuri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.ModelBiasBaselineConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig.html",
+			Properties: map[string]*Property{
+				"BaseliningJobName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig-baseliningjobname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ConstraintsResource": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig-constraintsresource",
+					Type:          "ConstraintsResource",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.ModelBiasJobInput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html",
+			Properties: map[string]*Property{
+				"EndpointInput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput-endpointinput",
+					Required:      true,
+					Type:          "EndpointInput",
+					UpdateType:    "Immutable",
+				},
+				"GroundTruthS3Input": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput-groundtruths3input",
+					Required:      true,
+					Type:          "MonitoringGroundTruthS3Input",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.MonitoringGroundTruthS3Input": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringgroundtruths3input.html",
+			Properties: map[string]*Property{
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringgroundtruths3input.html#cfn-sagemaker-modelbiasjobdefinition-monitoringgroundtruths3input-s3uri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.MonitoringOutput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutput.html",
+			Properties: map[string]*Property{
+				"S3Output": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutput.html#cfn-sagemaker-modelbiasjobdefinition-monitoringoutput-s3output",
+					Required:      true,
+					Type:          "S3Output",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.MonitoringOutputConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutputconfig.html",
+			Properties: map[string]*Property{
+				"KmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelbiasjobdefinition-monitoringoutputconfig-kmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"MonitoringOutputs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelbiasjobdefinition-monitoringoutputconfig-monitoringoutputs",
+					ItemType:      "MonitoringOutput",
+					Required:      true,
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.MonitoringResources": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringresources.html",
+			Properties: map[string]*Property{
+				"ClusterConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringresources.html#cfn-sagemaker-modelbiasjobdefinition-monitoringresources-clusterconfig",
+					Required:      true,
+					Type:          "ClusterConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.NetworkConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-networkconfig.html",
+			Properties: map[string]*Property{
+				"EnableInterContainerTrafficEncryption": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-networkconfig.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig-enableintercontainertrafficencryption",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"EnableNetworkIsolation": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-networkconfig.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig-enablenetworkisolation",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"VpcConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-networkconfig.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig-vpcconfig",
+					Type:          "VpcConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.S3Output": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-s3output.html",
+			Properties: map[string]*Property{
+				"LocalPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-s3output.html#cfn-sagemaker-modelbiasjobdefinition-s3output-localpath",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"S3UploadMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-s3output.html#cfn-sagemaker-modelbiasjobdefinition-s3output-s3uploadmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-s3output.html#cfn-sagemaker-modelbiasjobdefinition-s3output-s3uri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.StoppingCondition": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-stoppingcondition.html",
+			Properties: map[string]*Property{
+				"MaxRuntimeInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-stoppingcondition.html#cfn-sagemaker-modelbiasjobdefinition-stoppingcondition-maxruntimeinseconds",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelBiasJobDefinition.VpcConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-vpcconfig.html",
+			Properties: map[string]*Property{
+				"SecurityGroupIds": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-vpcconfig.html#cfn-sagemaker-modelbiasjobdefinition-vpcconfig-securitygroupids",
+					PrimitiveItemType: "String",
+					Required:          true,
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"Subnets": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-vpcconfig.html#cfn-sagemaker-modelbiasjobdefinition-vpcconfig-subnets",
+					PrimitiveItemType: "String",
+					Required:          true,
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.ClusterConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html",
+			Properties: map[string]*Property{
+				"InstanceCount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-instancecount",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"InstanceType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-instancetype",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"VolumeKmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-volumekmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"VolumeSizeInGB": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-volumesizeingb",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.ConstraintsResource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-constraintsresource.html",
+			Properties: map[string]*Property{
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-constraintsresource.html#cfn-sagemaker-modelexplainabilityjobdefinition-constraintsresource-s3uri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.EndpointInput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html",
+			Properties: map[string]*Property{
+				"EndpointName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-endpointname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"FeaturesAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-featuresattribute",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"InferenceAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-inferenceattribute",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"LocalPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-localpath",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"ProbabilityAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-probabilityattribute",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3DataDistributionType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-s3datadistributiontype",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3InputMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-s3inputmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.Environment": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-environment.html",
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityAppSpecification": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html",
+			Properties: map[string]*Property{
+				"ConfigUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification-configuri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"Environment": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification-environment",
+					Type:          "Environment",
+					UpdateType:    "Immutable",
+				},
+				"ImageUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification-imageuri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityBaselineConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig.html",
+			Properties: map[string]*Property{
+				"BaseliningJobName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig-baseliningjobname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ConstraintsResource": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig-constraintsresource",
+					Type:          "ConstraintsResource",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityJobInput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput.html",
+			Properties: map[string]*Property{
+				"EndpointInput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput-endpointinput",
+					Required:      true,
+					Type:          "EndpointInput",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutput.html",
+			Properties: map[string]*Property{
+				"S3Output": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutput.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutput-s3output",
+					Required:      true,
+					Type:          "S3Output",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutputConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig.html",
+			Properties: map[string]*Property{
+				"KmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig-kmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"MonitoringOutputs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig-monitoringoutputs",
+					ItemType:      "MonitoringOutput",
+					Required:      true,
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringResources": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringresources.html",
+			Properties: map[string]*Property{
+				"ClusterConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringresources.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringresources-clusterconfig",
+					Required:      true,
+					Type:          "ClusterConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.NetworkConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html",
+			Properties: map[string]*Property{
+				"EnableInterContainerTrafficEncryption": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-enableintercontainertrafficencryption",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"EnableNetworkIsolation": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-enablenetworkisolation",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"VpcConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-vpcconfig",
+					Type:          "VpcConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.S3Output": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-s3output.html",
+			Properties: map[string]*Property{
+				"LocalPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-s3output.html#cfn-sagemaker-modelexplainabilityjobdefinition-s3output-localpath",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"S3UploadMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-s3output.html#cfn-sagemaker-modelexplainabilityjobdefinition-s3output-s3uploadmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-s3output.html#cfn-sagemaker-modelexplainabilityjobdefinition-s3output-s3uri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.StoppingCondition": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-stoppingcondition.html",
+			Properties: map[string]*Property{
+				"MaxRuntimeInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-stoppingcondition.html#cfn-sagemaker-modelexplainabilityjobdefinition-stoppingcondition-maxruntimeinseconds",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition.VpcConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-vpcconfig.html",
+			Properties: map[string]*Property{
+				"SecurityGroupIds": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-vpcconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-vpcconfig-securitygroupids",
+					PrimitiveItemType: "String",
+					Required:          true,
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"Subnets": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-vpcconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-vpcconfig-subnets",
+					PrimitiveItemType: "String",
+					Required:          true,
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.ClusterConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html",
+			Properties: map[string]*Property{
+				"InstanceCount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-instancecount",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"InstanceType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-instancetype",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"VolumeKmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-volumekmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"VolumeSizeInGB": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-volumesizeingb",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.ConstraintsResource": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-constraintsresource.html",
+			Properties: map[string]*Property{
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-constraintsresource.html#cfn-sagemaker-modelqualityjobdefinition-constraintsresource-s3uri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.EndpointInput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html",
+			Properties: map[string]*Property{
+				"EndTimeOffset": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-endtimeoffset",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"EndpointName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-endpointname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"InferenceAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-inferenceattribute",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"LocalPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-localpath",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"ProbabilityAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-probabilityattribute",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ProbabilityThresholdAttribute": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-probabilitythresholdattribute",
+					PrimitiveType: "Double",
+					UpdateType:    "Immutable",
+				},
+				"S3DataDistributionType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-s3datadistributiontype",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3InputMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-s3inputmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"StartTimeOffset": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-starttimeoffset",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.Environment": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-environment.html",
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.ModelQualityAppSpecification": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html",
+			Properties: map[string]*Property{
+				"ContainerArguments": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-containerarguments",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"ContainerEntrypoint": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-containerentrypoint",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"Environment": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-environment",
+					Type:          "Environment",
+					UpdateType:    "Immutable",
+				},
+				"ImageUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-imageuri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"PostAnalyticsProcessorSourceUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-postanalyticsprocessorsourceuri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ProblemType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-problemtype",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"RecordPreprocessorSourceUri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-recordpreprocessorsourceuri",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.ModelQualityBaselineConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html",
+			Properties: map[string]*Property{
+				"BaseliningJobName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig-baseliningjobname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ConstraintsResource": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig-constraintsresource",
+					Type:          "ConstraintsResource",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.ModelQualityJobInput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html",
+			Properties: map[string]*Property{
+				"EndpointInput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput-endpointinput",
+					Required:      true,
+					Type:          "EndpointInput",
+					UpdateType:    "Immutable",
+				},
+				"GroundTruthS3Input": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput-groundtruths3input",
+					Required:      true,
+					Type:          "MonitoringGroundTruthS3Input",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.MonitoringGroundTruthS3Input": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringgroundtruths3input.html",
+			Properties: map[string]*Property{
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringgroundtruths3input.html#cfn-sagemaker-modelqualityjobdefinition-monitoringgroundtruths3input-s3uri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutput": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutput.html",
+			Properties: map[string]*Property{
+				"S3Output": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutput.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutput-s3output",
+					Required:      true,
+					Type:          "S3Output",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutputConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutputconfig.html",
+			Properties: map[string]*Property{
+				"KmsKeyId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutputconfig-kmskeyid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"MonitoringOutputs": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutputconfig-monitoringoutputs",
+					ItemType:      "MonitoringOutput",
+					Required:      true,
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.MonitoringResources": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringresources.html",
+			Properties: map[string]*Property{
+				"ClusterConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringresources.html#cfn-sagemaker-modelqualityjobdefinition-monitoringresources-clusterconfig",
+					Required:      true,
+					Type:          "ClusterConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.NetworkConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html",
+			Properties: map[string]*Property{
+				"EnableInterContainerTrafficEncryption": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-enableintercontainertrafficencryption",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"EnableNetworkIsolation": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-enablenetworkisolation",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Immutable",
+				},
+				"VpcConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-vpcconfig",
+					Type:          "VpcConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.S3Output": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-s3output.html",
+			Properties: map[string]*Property{
+				"LocalPath": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-s3output.html#cfn-sagemaker-modelqualityjobdefinition-s3output-localpath",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"S3UploadMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-s3output.html#cfn-sagemaker-modelqualityjobdefinition-s3output-s3uploadmode",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"S3Uri": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-s3output.html#cfn-sagemaker-modelqualityjobdefinition-s3output-s3uri",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.StoppingCondition": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-stoppingcondition.html",
+			Properties: map[string]*Property{
+				"MaxRuntimeInSeconds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-stoppingcondition.html#cfn-sagemaker-modelqualityjobdefinition-stoppingcondition-maxruntimeinseconds",
+					PrimitiveType: "Integer",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition.VpcConfig": &PropertyType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-vpcconfig.html",
+			Properties: map[string]*Property{
+				"SecurityGroupIds": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-vpcconfig.html#cfn-sagemaker-modelqualityjobdefinition-vpcconfig-securitygroupids",
+					PrimitiveItemType: "String",
+					Required:          true,
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"Subnets": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-vpcconfig.html#cfn-sagemaker-modelqualityjobdefinition-vpcconfig-subnets",
 					PrimitiveItemType: "String",
 					Required:          true,
 					Type:              "List",
@@ -38675,8 +42597,17 @@ var Cfn = Spec{
 			Properties: map[string]*Property{
 				"MonitoringJobDefinition": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-monitoringjobdefinition",
-					Required:      true,
 					Type:          "MonitoringJobDefinition",
+					UpdateType:    "Mutable",
+				},
+				"MonitoringJobDefinitionName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-monitoringjobdefinitionname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"MonitoringType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-monitoringtype",
+					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
 				"ScheduleConfig": &Property{
@@ -39110,7 +43041,7 @@ var Cfn = Spec{
 				},
 				"MutualTlsAuthentication": &Property{
 					Documentation: "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-domainconfiguration.html#sam-api-domainconfiguration-mutualtlsauthentication",
-					Type:          "MutualTlsAuthentication",
+					Type:          "AWS::ApiGateway::DomainName.MutualTlsAuthentication",
 				},
 				"Route53": &Property{
 					Documentation: "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-domainconfiguration.html#sam-api-domainconfiguration-route53",
@@ -39543,6 +43474,10 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					Required:      true,
 				},
+				"TumblingWindowInSeconds": &Property{
+					Documentation: "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-dynamodb.html#sam-function-dynamodb-tumblingwindowinseconds",
+					PrimitiveType: "Integer",
+				},
 			},
 		},
 		"AWS::Serverless::Function.EventBridgeRule": &PropertyType{
@@ -39695,7 +43630,7 @@ var Cfn = Spec{
 				},
 			},
 		},
-		"AWS::Serverless::Function.ImageConfig \\(Lambda property type\\)": &PropertyType{
+		"AWS::Serverless::Function.ImageConfig": &PropertyType{
 			Documentation: "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-imageconfig.html",
 			Properties: map[string]*Property{
 				"Command": &Property{
@@ -39772,6 +43707,10 @@ var Cfn = Spec{
 					Documentation: "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-kinesis.html#sam-function-kinesis-stream",
 					PrimitiveType: "String",
 					Required:      true,
+				},
+				"TumblingWindowInSeconds": &Property{
+					Documentation: "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-kinesis.html#sam-function-kinesis-tumblingwindowinseconds",
+					PrimitiveType: "Integer",
 				},
 			},
 		},
@@ -40144,7 +44083,7 @@ var Cfn = Spec{
 				},
 				"MutualTlsAuthentication": &Property{
 					Documentation: "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-httpapidomainconfiguration.html#sam-httpapi-httpapidomainconfiguration-mutualtlsauthentication",
-					Type:          "MutualTlsAuthentication",
+					Type:          "AWS::ApiGateway::DomainName.MutualTlsAuthentication",
 				},
 				"Route53": &Property{
 					Documentation: "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-httpapidomainconfiguration.html#sam-httpapi-httpapidomainconfiguration-route53",
@@ -40866,10 +44805,10 @@ var Cfn = Spec{
 					UpdateType:        "Conditional",
 				},
 				"SecurityGroupIds": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-securitygroupids",
-					ItemType:      "SecurityGroupId",
-					Type:          "List",
-					UpdateType:    "Mutable",
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-securitygroupids",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
 				},
 				"SubnetIds": &Property{
 					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-subnetids",
@@ -40907,11 +44846,6 @@ var Cfn = Spec{
 			},
 		},
 		"AWS::Transfer::Server.Protocol": &PropertyType{
-			Property: Property{
-				PrimitiveType: "String",
-			},
-		},
-		"AWS::Transfer::Server.SecurityGroupId": &PropertyType{
 			Property: Property{
 				PrimitiveType: "String",
 			},
@@ -42927,7 +46861,7 @@ var Cfn = Spec{
 			},
 		},
 	},
-	ResourceSpecificationVersion: "21.0.0",
+	ResourceSpecificationVersion: "22.0.0",
 	ResourceTypes: map[string]*ResourceType{
 		"AWS::ACMPCA::Certificate": &ResourceType{
 			Attributes: map[string]*Attribute{
@@ -46601,6 +50535,73 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::AuditManager::Assessment": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"assessmentId": &Attribute{
+					PrimitiveType: "String",
+				},
+				"creationTime": &Attribute{
+					PrimitiveType: "Double",
+				},
+				"delegations": &Attribute{
+					Type: "Delegations",
+				},
+				"frameworkId": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html",
+			Properties: map[string]*Property{
+				"assessmentReportsDestination": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-assessmentreportsdestination",
+					Type:          "AssessmentReportsDestination",
+					UpdateType:    "Mutable",
+				},
+				"awsAccount": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-awsaccount",
+					Type:          "AWSAccount",
+					UpdateType:    "Immutable",
+				},
+				"description": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-description",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"frameworkId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-frameworkid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-name",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"roles": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-roles",
+					Type:          "Roles",
+					UpdateType:    "Mutable",
+				},
+				"scope": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-scope",
+					Type:          "Scope",
+					UpdateType:    "Mutable",
+				},
+				"status": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-status",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-tags",
+					Type:          "Tags",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::AutoScaling::AutoScalingGroup": &ResourceType{
 			Attributes: map[string]*Attribute{
 				"LaunchConfigurationName": &Attribute{
@@ -46840,7 +50841,7 @@ var Cfn = Spec{
 				},
 				"MetadataOptions": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-autoscaling-launchconfig-metadataoptions",
-					Type:          "MetadataOption",
+					Type:          "MetadataOptions",
 					UpdateType:    "Immutable",
 				},
 				"PlacementTenancy": &Property{
@@ -47193,6 +51194,17 @@ var Cfn = Spec{
 					PrimitiveType: "Json",
 					UpdateType:    "Mutable",
 				},
+				"PlatformCapabilities": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-platformcapabilities",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+				"PropagateTags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-propagatetags",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
 				"RetryStrategy": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-retrystrategy",
 					Type:          "RetryStrategy",
@@ -47542,6 +51554,68 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::CloudFormation::ModuleDefaultVersion": &ResourceType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html",
+			Properties: map[string]*Property{
+				"Arn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html#cfn-cloudformation-moduledefaultversion-arn",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ModuleName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html#cfn-cloudformation-moduledefaultversion-modulename",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"VersionId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html#cfn-cloudformation-moduledefaultversion-versionid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::CloudFormation::ModuleVersion": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Description": &Attribute{
+					PrimitiveType: "String",
+				},
+				"DocumentationUrl": &Attribute{
+					PrimitiveType: "String",
+				},
+				"IsDefaultVersion": &Attribute{
+					PrimitiveType: "Boolean",
+				},
+				"Schema": &Attribute{
+					PrimitiveType: "String",
+				},
+				"TimeCreated": &Attribute{
+					PrimitiveType: "String",
+				},
+				"VersionId": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Visibility": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html",
+			Properties: map[string]*Property{
+				"ModuleName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#cfn-cloudformation-moduleversion-modulename",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"ModulePackage": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#cfn-cloudformation-moduleversion-modulepackage",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
 		"AWS::CloudFormation::Stack": &ResourceType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html",
 			Properties: map[string]*Property{
@@ -47625,6 +51699,7 @@ var Cfn = Spec{
 				"PermissionModel": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-permissionmodel",
 					PrimitiveType: "String",
+					Required:      true,
 					UpdateType:    "Immutable",
 				},
 				"StackInstancesGroup": &Property{
@@ -47636,6 +51711,7 @@ var Cfn = Spec{
 				"StackSetName": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-stacksetname",
 					PrimitiveType: "String",
+					Required:      true,
 					UpdateType:    "Immutable",
 				},
 				"Tags": &Property{
@@ -48282,6 +52358,11 @@ var Cfn = Spec{
 					Required:      true,
 					UpdateType:    "Immutable",
 				},
+				"EncryptionKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#cfn-codeartifact-domain-encryptionkey",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
 				"PermissionsPolicyDocument": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#cfn-codeartifact-domain-permissionspolicydocument",
 					PrimitiveType: "Json",
@@ -48316,6 +52397,17 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-description",
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
+				},
+				"DomainName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-domainname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"DomainOwner": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-domainowner",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
 				},
 				"ExternalConnections": &Property{
 					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-externalconnections",
@@ -48762,6 +52854,13 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codegurureviewer-repositoryassociation.html#cfn-codegurureviewer-repositoryassociation-owner",
 					PrimitiveType: "String",
 					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codegurureviewer-repositoryassociation.html#cfn-codegurureviewer-repositoryassociation-tags",
+					DuplicatesAllowed: true,
+					ItemType:          "Tag",
+					Type:              "List",
+					UpdateType:        "Immutable",
 				},
 				"Type": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codegurureviewer-repositoryassociation.html#cfn-codegurureviewer-repositoryassociation-type",
@@ -50123,6 +54222,12 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
 			},
 		},
 		"AWS::DMS::Certificate": &ResourceType{
@@ -50789,6 +54894,38 @@ var Cfn = Spec{
 				"Message": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-message",
 					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::DevOpsGuru::NotificationChannel": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Id": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-notificationchannel.html",
+			Properties: map[string]*Property{
+				"Config": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-notificationchannel.html#cfn-devopsguru-notificationchannel-config",
+					Required:      true,
+					Type:          "NotificationChannelConfig",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::DevOpsGuru::ResourceCollection": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"ResourceCollectionType": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-resourcecollection.html",
+			Properties: map[string]*Property{
+				"ResourceCollectionFilter": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-resourcecollection.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter",
+					Required:      true,
+					Type:          "ResourceCollectionFilter",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -51880,6 +56017,11 @@ var Cfn = Spec{
 					Type:          "List",
 					UpdateType:    "Immutable",
 				},
+				"EnclaveOptions": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-enclaveoptions",
+					Type:          "EnclaveOptions",
+					UpdateType:    "Immutable",
+				},
 				"HibernationOptions": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hibernationoptions",
 					Type:          "HibernationOptions",
@@ -52224,6 +56366,122 @@ var Cfn = Spec{
 					PrimitiveType: "Integer",
 					Required:      true,
 					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsAnalysis": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"AlternatePathHints": &Attribute{
+					ItemType: "AlternatePathHint",
+					Type:     "List",
+				},
+				"Explanations": &Attribute{
+					ItemType: "Explanation",
+					Type:     "List",
+				},
+				"ForwardPathComponents": &Attribute{
+					ItemType: "PathComponent",
+					Type:     "List",
+				},
+				"NetworkInsightsAnalysisArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"NetworkInsightsAnalysisId": &Attribute{
+					PrimitiveType: "String",
+				},
+				"NetworkPathFound": &Attribute{
+					PrimitiveType: "Boolean",
+				},
+				"ReturnPathComponents": &Attribute{
+					ItemType: "PathComponent",
+					Type:     "List",
+				},
+				"StartDate": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Status": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html",
+			Properties: map[string]*Property{
+				"FilterInArns": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-filterinarns",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Immutable",
+				},
+				"NetworkInsightsPathId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-networkinsightspathid",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"StatusMessage": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-statusmessage",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::EC2::NetworkInsightsPath": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"CreatedDate": &Attribute{
+					PrimitiveType: "String",
+				},
+				"NetworkInsightsPathArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"NetworkInsightsPathId": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html",
+			Properties: map[string]*Property{
+				"Destination": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destination",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"DestinationIp": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationip",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"DestinationPort": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationport",
+					PrimitiveType: "Integer",
+					UpdateType:    "Immutable",
+				},
+				"Protocol": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-protocol",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"Source": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-source",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"SourceIp": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-sourceip",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
 				},
 			},
 		},
@@ -53560,6 +57818,11 @@ var Cfn = Spec{
 					Type:              "List",
 					UpdateType:        "Mutable",
 				},
+				"Throughput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-throughput",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
 				"VolumeType": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-volumetype",
 					PrimitiveType: "String",
@@ -53587,6 +57850,31 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					Required:      true,
 					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::ECR::PublicRepository": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html",
+			Properties: map[string]*Property{
+				"RepositoryCatalogData": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorycatalogdata",
+					PrimitiveType: "Json",
+					UpdateType:    "Mutable",
+				},
+				"RepositoryName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"RepositoryPolicyText": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
 				},
 			},
 		},
@@ -54243,6 +58531,11 @@ var Cfn = Spec{
 			Properties: map[string]*Property{
 				"AmiType": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-amitype",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"CapacityType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-capacitytype",
 					PrimitiveType: "String",
 					UpdateType:    "Immutable",
 				},
@@ -54964,6 +59257,12 @@ var Cfn = Spec{
 					PrimitiveType: "Boolean",
 					UpdateType:    "Immutable",
 				},
+				"UserGroupIds": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-usergroupids",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
 			},
 		},
 		"AWS::ElastiCache::SecurityGroup": &ResourceType{
@@ -55020,6 +59319,94 @@ var Cfn = Spec{
 					Required:          true,
 					Type:              "List",
 					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::ElastiCache::User": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Authentication": &Attribute{
+					Type: "Authentication",
+				},
+				"Status": &Attribute{
+					PrimitiveType: "String",
+				},
+				"UserGroupIds": &Attribute{
+					Type: "UserGroupIdList",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html",
+			Properties: map[string]*Property{
+				"AccessString": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-accessstring",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Engine": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-engine",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"NoPasswordRequired": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-nopasswordrequired",
+					PrimitiveType: "Boolean",
+					UpdateType:    "Mutable",
+				},
+				"Passwords": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-passwords",
+					Type:          "PasswordList",
+					UpdateType:    "Mutable",
+				},
+				"UserId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-userid",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"UserName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-username",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::ElastiCache::UserGroup": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"PendingChanges": &Attribute{
+					Type: "UserGroupPendingChanges",
+				},
+				"ReplicationGroupIds": &Attribute{
+					Type: "ReplicationGroupIdList",
+				},
+				"Status": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html",
+			Properties: map[string]*Property{
+				"Engine": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-engine",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"UserGroupId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-usergroupid",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"UserIds": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-userids",
+					Type:          "UserIdList",
+					UpdateType:    "Mutable",
 				},
 			},
 		},
@@ -55812,6 +60199,11 @@ var Cfn = Spec{
 			},
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html",
 			Properties: map[string]*Property{
+				"ArchiveName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#cfn-events-archive-archivename",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
 				"Description": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#cfn-events-archive-description",
 					PrimitiveType: "String",
@@ -57811,6 +62203,38 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::GreengrassV2::ComponentVersion": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ComponentName": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ComponentVersion": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html",
+			Properties: map[string]*Property{
+				"InlineRecipe": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-inlinerecipe",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"LambdaFunction": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-lambdafunction",
+					Type:          "LambdaFunctionRecipeSource",
+					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-tags",
+					PrimitiveItemType: "String",
+					Type:              "Map",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
 		"AWS::GuardDuty::Detector": &ResourceType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html",
 			Properties: map[string]*Property{
@@ -59252,6 +63676,11 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
+				"VpcProperties": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#cfn-iot-topicruledestination-vpcproperties",
+					Type:          "VpcDestinationProperties",
+					UpdateType:    "Immutable",
+				},
 			},
 		},
 		"AWS::IoTAnalytics::Channel": &ResourceType{
@@ -59441,6 +63870,37 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::IoTSiteWise::AccessPolicy": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"AccessPolicyArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"AccessPolicyId": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html",
+			Properties: map[string]*Property{
+				"AccessPolicyIdentity": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity",
+					Required:      true,
+					Type:          "AccessPolicyIdentity",
+					UpdateType:    "Mutable",
+				},
+				"AccessPolicyPermission": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicypermission",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"AccessPolicyResource": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicyresource",
+					Required:      true,
+					Type:          "AccessPolicyResource",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::IoTSiteWise::Asset": &ResourceType{
 			Attributes: map[string]*Attribute{
 				"AssetArn": &Attribute{
@@ -59527,6 +63987,49 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::IoTSiteWise::Dashboard": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"DashboardArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"DashboardId": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html",
+			Properties: map[string]*Property{
+				"DashboardDefinition": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-dashboarddefinition",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"DashboardDescription": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-dashboarddescription",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"DashboardName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-dashboardname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"ProjectId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-projectid",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-tags",
+					DuplicatesAllowed: true,
+					ItemType:          "Tag",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
 		"AWS::IoTSiteWise::Gateway": &ResourceType{
 			Attributes: map[string]*Attribute{
 				"GatewayId": &Attribute{
@@ -59562,6 +64065,95 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::IoTSiteWise::Portal": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"PortalArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"PortalClientId": &Attribute{
+					PrimitiveType: "String",
+				},
+				"PortalId": &Attribute{
+					PrimitiveType: "String",
+				},
+				"PortalStartUrl": &Attribute{
+					PrimitiveType: "String",
+				},
+				"PortalStatus": &Attribute{
+					Type: "PortalStatus",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html",
+			Properties: map[string]*Property{
+				"PortalContactEmail": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portalcontactemail",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"PortalDescription": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portaldescription",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"PortalName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portalname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-rolearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-tags",
+					DuplicatesAllowed: true,
+					ItemType:          "Tag",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::IoTSiteWise::Project": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"ProjectArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ProjectId": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html",
+			Properties: map[string]*Property{
+				"PortalId": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-portalid",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"ProjectDescription": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-projectdescription",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ProjectName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-projectname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-tags",
+					DuplicatesAllowed: true,
+					ItemType:          "Tag",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
 		"AWS::IoTThingsGraph::FlowTemplate": &ResourceType{
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html",
 			Properties: map[string]*Property{
@@ -59574,6 +64166,234 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-definition",
 					Required:      true,
 					Type:          "DefinitionDocument",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::Destination": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html",
+			Properties: map[string]*Property{
+				"Description": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-description",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Expression": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-expression",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"ExpressionType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-expressiontype",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-name",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"NextToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-nexttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-rolearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::DeviceProfile": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Id": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html",
+			Properties: map[string]*Property{
+				"LoRaWANDeviceProfile": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile",
+					Type:          "LoRaWANDeviceProfile",
+					UpdateType:    "Mutable",
+				},
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#cfn-iotwireless-deviceprofile-name",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NextToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#cfn-iotwireless-deviceprofile-nexttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#cfn-iotwireless-deviceprofile-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::ServiceProfile": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Id": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html",
+			Properties: map[string]*Property{
+				"LoRaWANGetServiceProfileInfo": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-lorawangetserviceprofileinfo",
+					Type:          "LoRaWANGetServiceProfileInfo",
+					UpdateType:    "Mutable",
+				},
+				"LoRaWANServiceProfile": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile",
+					Type:          "LoRaWANServiceProfile",
+					UpdateType:    "Mutable",
+				},
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-name",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NextToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-nexttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessDevice": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Id": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ThingArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ThingName": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html",
+			Properties: map[string]*Property{
+				"Description": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-description",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"DestinationName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-destinationname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"LoRaWANDevice": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-lorawandevice",
+					Type:          "LoRaWANDevice",
+					UpdateType:    "Mutable",
+				},
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-name",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NextToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-nexttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+				"Type": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-type",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::IoTWireless::WirelessGateway": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Id": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ThingArn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html",
+			Properties: map[string]*Property{
+				"Description": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-description",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"LoRaWANGateway": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-lorawangateway",
+					Required:      true,
+					Type:          "LoRaWANGateway",
+					UpdateType:    "Mutable",
+				},
+				"Name": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-name",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"NextToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-nexttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+				"ThingName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-thingname",
+					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -59810,6 +64630,16 @@ var Cfn = Spec{
 				"Tags": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-tags",
 					Type:          "TagList",
+					UpdateType:    "Mutable",
+				},
+				"UserContextPolicy": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-usercontextpolicy",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"UserTokenConfigurations": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-usertokenconfigurations",
+					Type:          "UserTokenConfigurationList",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -60299,7 +65129,6 @@ var Cfn = Spec{
 				"EventSourceArn": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn",
 					PrimitiveType: "String",
-					Required:      true,
 					UpdateType:    "Immutable",
 				},
 				"FunctionName": &Property{
@@ -60307,6 +65136,12 @@ var Cfn = Spec{
 					PrimitiveType: "String",
 					Required:      true,
 					UpdateType:    "Mutable",
+				},
+				"FunctionResponseTypes": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionresponsetypes",
+					PrimitiveItemType: "String",
+					Type:              "List",
+					UpdateType:        "Mutable",
 				},
 				"MaximumBatchingWindowInSeconds": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds",
@@ -60338,6 +65173,11 @@ var Cfn = Spec{
 					PrimitiveItemType: "String",
 					Type:              "List",
 					UpdateType:        "Mutable",
+				},
+				"SelfManagedEventSource": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-selfmanagedeventsource",
+					Type:          "SelfManagedEventSource",
+					UpdateType:    "Immutable",
 				},
 				"SourceAccessConfigurations": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations",
@@ -60411,7 +65251,11 @@ var Cfn = Spec{
 				"Handler": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler",
 					PrimitiveType: "String",
-					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"ImageConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig",
+					Type:          "ImageConfig",
 					UpdateType:    "Mutable",
 				},
 				"KmsKeyArn": &Property{
@@ -60430,6 +65274,11 @@ var Cfn = Spec{
 					PrimitiveType: "Integer",
 					UpdateType:    "Mutable",
 				},
+				"PackageType": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-packagetype",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
 				"ReservedConcurrentExecutions": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions",
 					PrimitiveType: "Integer",
@@ -60444,7 +65293,6 @@ var Cfn = Spec{
 				"Runtime": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime",
 					PrimitiveType: "String",
-					Required:      true,
 					UpdateType:    "Mutable",
 				},
 				"Tags": &Property{
@@ -60596,6 +65444,221 @@ var Cfn = Spec{
 				"ProvisionedConcurrencyConfig": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-provisionedconcurrencyconfig",
 					Type:          "ProvisionedConcurrencyConfiguration",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::Grant": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"GrantArn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html",
+			Properties: map[string]*Property{
+				"AllowedOperations": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-allowedoperations",
+					Type:          "AllowedOperationList",
+					UpdateType:    "Mutable",
+				},
+				"ClientToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-clienttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Filters": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-filters",
+					Type:          "FilterList",
+					UpdateType:    "Mutable",
+				},
+				"GrantArns": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-grantarns",
+					Type:          "ArnList",
+					UpdateType:    "Mutable",
+				},
+				"GrantName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-grantname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"GrantStatus": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-grantstatus",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"GrantedOperations": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-grantedoperations",
+					Type:          "AllowedOperationList",
+					UpdateType:    "Mutable",
+				},
+				"GranteePrincipalArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-granteeprincipalarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"HomeRegion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-homeregion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"LicenseArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-licensearn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"MaxResults": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-maxresults",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"NextToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-nexttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ParentArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-parentarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Principals": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-principals",
+					Type:          "ArnList",
+					UpdateType:    "Mutable",
+				},
+				"SourceVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-sourceversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Status": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-status",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"StatusReason": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-statusreason",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-tags",
+					Type:          "TagList",
+					UpdateType:    "Mutable",
+				},
+				"Version": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-version",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::LicenseManager::License": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"LicenseArn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html",
+			Properties: map[string]*Property{
+				"Beneficiary": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-beneficiary",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ClientToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-clienttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ConsumptionConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-consumptionconfiguration",
+					Required:      true,
+					Type:          "ConsumptionConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"Entitlements": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-entitlements",
+					Required:      true,
+					Type:          "EntitlementList",
+					UpdateType:    "Mutable",
+				},
+				"Filters": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-filters",
+					Type:          "FilterList",
+					UpdateType:    "Mutable",
+				},
+				"HomeRegion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-homeregion",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Issuer": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-issuer",
+					Required:      true,
+					Type:          "IssuerData",
+					UpdateType:    "Mutable",
+				},
+				"LicenseArns": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-licensearns",
+					Type:          "ArnList",
+					UpdateType:    "Mutable",
+				},
+				"LicenseMetadata": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-licensemetadata",
+					Type:          "MetadataList",
+					UpdateType:    "Mutable",
+				},
+				"LicenseName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-licensename",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"MaxResults": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-maxresults",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"NextToken": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-nexttoken",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ProductName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-productname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ProductSKU": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-productsku",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SourceVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-sourceversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Status": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-status",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-tags",
+					Type:          "TagList",
+					UpdateType:    "Mutable",
+				},
+				"Validity": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-validity",
+					Required:      true,
+					Type:          "ValidityDateFormat",
+					UpdateType:    "Mutable",
+				},
+				"Version": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-version",
+					PrimitiveType: "String",
 					UpdateType:    "Mutable",
 				},
 			},
@@ -60788,6 +65851,121 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags",
 					PrimitiveType: "Json",
 					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::MWAA::Environment": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"Arn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"CreatedAt": &Attribute{
+					PrimitiveType: "String",
+				},
+				"LastUpdate": &Attribute{
+					Type: "LastUpdate",
+				},
+				"Name": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ServiceRoleArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"Status": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html",
+			Properties: map[string]*Property{
+				"AirflowConfigurationOptions": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-airflowconfigurationoptions",
+					Type:          "AirflowConfigurationOptions",
+					UpdateType:    "Mutable",
+				},
+				"AirflowVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-airflowversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"DagS3Path": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-dags3path",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"EnvironmentClass": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-environmentclass",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"ExecutionRoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-executionrolearn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"KmsKey": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-kmskey",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"LoggingConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-loggingconfiguration",
+					Type:          "LoggingConfiguration",
+					UpdateType:    "Mutable",
+				},
+				"MaxWorkers": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-maxworkers",
+					PrimitiveType: "Integer",
+					UpdateType:    "Mutable",
+				},
+				"NetworkConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-networkconfiguration",
+					Type:          "NetworkConfiguration",
+					UpdateType:    "Immutable",
+				},
+				"PluginsS3ObjectVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-pluginss3objectversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"PluginsS3Path": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-pluginss3path",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"RequirementsS3ObjectVersion": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-requirementss3objectversion",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"RequirementsS3Path": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-requirementss3path",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"SourceBucketArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-sourcebucketarn",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-tags",
+					Type:          "TagMap",
+					UpdateType:    "Mutable",
+				},
+				"WebserverAccessMode": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-webserveraccessmode",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"WebserverUrl": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-webserverurl",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"WeeklyMaintenanceWindowStart": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-weeklymaintenancewindowstart",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
 				},
 			},
 		},
@@ -61933,7 +67111,8 @@ var Cfn = Spec{
 				},
 				"Tags": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-tags",
-					Type:          "Tags",
+					ItemType:      "Tag",
+					Type:          "List",
 					UpdateType:    "Mutable",
 				},
 				"VpcId": &Property{
@@ -61974,22 +67153,26 @@ var Cfn = Spec{
 				},
 				"Tags": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-tags",
-					Type:          "Tags",
+					ItemType:      "Tag",
+					Type:          "List",
 					UpdateType:    "Mutable",
 				},
 			},
 		},
 		"AWS::NetworkFirewall::LoggingConfiguration": &ResourceType{
-			Attributes: map[string]*Attribute{
-				"FirewallArn": &Attribute{
-					PrimitiveType: "String",
-				},
-				"FirewallName": &Attribute{
-					PrimitiveType: "String",
-				},
-			},
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html",
 			Properties: map[string]*Property{
+				"FirewallArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-firewallarn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"FirewallName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-firewallname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
 				"LoggingConfiguration": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-loggingconfiguration",
 					Required:      true,
@@ -62001,6 +67184,9 @@ var Cfn = Spec{
 		"AWS::NetworkFirewall::RuleGroup": &ResourceType{
 			Attributes: map[string]*Attribute{
 				"RuleGroupArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"RuleGroupId": &Attribute{
 					PrimitiveType: "String",
 				},
 			},
@@ -62022,11 +67208,6 @@ var Cfn = Spec{
 					Type:          "RuleGroup",
 					UpdateType:    "Mutable",
 				},
-				"RuleGroupId": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroupid",
-					PrimitiveType: "String",
-					UpdateType:    "Mutable",
-				},
 				"RuleGroupName": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroupname",
 					PrimitiveType: "String",
@@ -62035,7 +67216,8 @@ var Cfn = Spec{
 				},
 				"Tags": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-tags",
-					Type:          "Tags",
+					ItemType:      "Tag",
+					Type:          "List",
 					UpdateType:    "Mutable",
 				},
 				"Type": &Property{
@@ -66673,6 +71855,23 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::SSO::InstanceAccessControlAttributeConfiguration": &ResourceType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html",
+			Properties: map[string]*Property{
+				"InstanceAccessControlAttributeConfiguration": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instanceaccesscontrolattributeconfiguration",
+					PrimitiveType: "Json",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"InstanceArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instancearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::SSO::PermissionSet": &ResourceType{
 			Attributes: map[string]*Attribute{
 				"PermissionSetArn": &Attribute{
@@ -66748,6 +71947,130 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::SageMaker::DataQualityJobDefinition": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"CreationTime": &Attribute{
+					PrimitiveType: "String",
+				},
+				"JobDefinitionArn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html",
+			Properties: map[string]*Property{
+				"DataQualityAppSpecification": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification",
+					Required:      true,
+					Type:          "DataQualityAppSpecification",
+					UpdateType:    "Immutable",
+				},
+				"DataQualityBaselineConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig",
+					Type:          "DataQualityBaselineConfig",
+					UpdateType:    "Immutable",
+				},
+				"DataQualityJobInput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjobinput",
+					Required:      true,
+					Type:          "DataQualityJobInput",
+					UpdateType:    "Immutable",
+				},
+				"DataQualityJobOutputConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjoboutputconfig",
+					Required:      true,
+					Type:          "MonitoringOutputConfig",
+					UpdateType:    "Immutable",
+				},
+				"JobDefinitionName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-jobdefinitionname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"JobResources": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-jobresources",
+					Required:      true,
+					Type:          "MonitoringResources",
+					UpdateType:    "Immutable",
+				},
+				"NetworkConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig",
+					Type:          "NetworkConfig",
+					UpdateType:    "Immutable",
+				},
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-rolearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"StoppingCondition": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-stoppingcondition",
+					Type:          "StoppingCondition",
+					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Device": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"DeviceFleetName": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-device.html",
+			Properties: map[string]*Property{
+				"Device": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-device.html#cfn-sagemaker-device-device",
+					PrimitiveType: "Json",
+					Type:          "Device",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-device.html#cfn-sagemaker-device-tags",
+					ItemType:      "Json",
+					Type:          "Tag",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::DeviceFleet": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"DeviceFleetName": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html",
+			Properties: map[string]*Property{
+				"Description": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-description",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"OutputConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-outputconfig",
+					Required:      true,
+					Type:          "EdgeOutputConfig",
+					UpdateType:    "Mutable",
+				},
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-rolearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-tags",
+					ItemType:      "Json",
+					Type:          "Tag",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
 		"AWS::SageMaker::Endpoint": &ResourceType{
 			Attributes: map[string]*Attribute{
 				"EndpointName": &Attribute{
@@ -66756,6 +72079,11 @@ var Cfn = Spec{
 			},
 			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html",
 			Properties: map[string]*Property{
+				"DeploymentConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-deploymentconfig",
+					Type:          "DeploymentConfig",
+					UpdateType:    "Mutable",
+				},
 				"EndpointConfigName": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname",
 					PrimitiveType: "String",
@@ -66872,12 +72200,260 @@ var Cfn = Spec{
 				},
 			},
 		},
+		"AWS::SageMaker::ModelBiasJobDefinition": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"CreationTime": &Attribute{
+					PrimitiveType: "String",
+				},
+				"JobDefinitionArn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html",
+			Properties: map[string]*Property{
+				"JobDefinitionName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-jobdefinitionname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"JobResources": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-jobresources",
+					Required:      true,
+					Type:          "MonitoringResources",
+					UpdateType:    "Immutable",
+				},
+				"ModelBiasAppSpecification": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification",
+					Required:      true,
+					Type:          "ModelBiasAppSpecification",
+					UpdateType:    "Immutable",
+				},
+				"ModelBiasBaselineConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig",
+					Type:          "ModelBiasBaselineConfig",
+					UpdateType:    "Immutable",
+				},
+				"ModelBiasJobInput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput",
+					Required:      true,
+					Type:          "ModelBiasJobInput",
+					UpdateType:    "Immutable",
+				},
+				"ModelBiasJobOutputConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjoboutputconfig",
+					Required:      true,
+					Type:          "MonitoringOutputConfig",
+					UpdateType:    "Immutable",
+				},
+				"NetworkConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig",
+					Type:          "NetworkConfig",
+					UpdateType:    "Immutable",
+				},
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-rolearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"StoppingCondition": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-stoppingcondition",
+					Type:          "StoppingCondition",
+					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelExplainabilityJobDefinition": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"CreationTime": &Attribute{
+					PrimitiveType: "String",
+				},
+				"JobDefinitionArn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html",
+			Properties: map[string]*Property{
+				"JobDefinitionName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-jobdefinitionname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"JobResources": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-jobresources",
+					Required:      true,
+					Type:          "MonitoringResources",
+					UpdateType:    "Immutable",
+				},
+				"ModelExplainabilityAppSpecification": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification",
+					Required:      true,
+					Type:          "ModelExplainabilityAppSpecification",
+					UpdateType:    "Immutable",
+				},
+				"ModelExplainabilityBaselineConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig",
+					Type:          "ModelExplainabilityBaselineConfig",
+					UpdateType:    "Immutable",
+				},
+				"ModelExplainabilityJobInput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput",
+					Required:      true,
+					Type:          "ModelExplainabilityJobInput",
+					UpdateType:    "Immutable",
+				},
+				"ModelExplainabilityJobOutputConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjoboutputconfig",
+					Required:      true,
+					Type:          "MonitoringOutputConfig",
+					UpdateType:    "Immutable",
+				},
+				"NetworkConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig",
+					Type:          "NetworkConfig",
+					UpdateType:    "Immutable",
+				},
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-rolearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"StoppingCondition": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-stoppingcondition",
+					Type:          "StoppingCondition",
+					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelPackageGroup": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"CreationTime": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ModelPackageGroupArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ModelPackageGroupStatus": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html",
+			Properties: map[string]*Property{
+				"ModelPackageGroupDescription": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-modelpackagegroupdescription",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ModelPackageGroupName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-modelpackagegroupname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"ModelPackageGroupPolicy": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-modelpackagegrouppolicy",
+					PrimitiveType: "Json",
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::ModelQualityJobDefinition": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"CreationTime": &Attribute{
+					PrimitiveType: "String",
+				},
+				"JobDefinitionArn": &Attribute{
+					PrimitiveType: "String",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html",
+			Properties: map[string]*Property{
+				"JobDefinitionName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-jobdefinitionname",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"JobResources": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-jobresources",
+					Required:      true,
+					Type:          "MonitoringResources",
+					UpdateType:    "Immutable",
+				},
+				"ModelQualityAppSpecification": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification",
+					Required:      true,
+					Type:          "ModelQualityAppSpecification",
+					UpdateType:    "Immutable",
+				},
+				"ModelQualityBaselineConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig",
+					Type:          "ModelQualityBaselineConfig",
+					UpdateType:    "Immutable",
+				},
+				"ModelQualityJobInput": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput",
+					Required:      true,
+					Type:          "ModelQualityJobInput",
+					UpdateType:    "Immutable",
+				},
+				"ModelQualityJobOutputConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjoboutputconfig",
+					Required:      true,
+					Type:          "MonitoringOutputConfig",
+					UpdateType:    "Immutable",
+				},
+				"NetworkConfig": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig",
+					Type:          "NetworkConfig",
+					UpdateType:    "Immutable",
+				},
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-rolearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"StoppingCondition": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-stoppingcondition",
+					Type:          "StoppingCondition",
+					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Immutable",
+				},
+			},
+		},
 		"AWS::SageMaker::MonitoringSchedule": &ResourceType{
 			Attributes: map[string]*Attribute{
 				"CreationTime": &Attribute{
 					PrimitiveType: "String",
 				},
 				"LastModifiedTime": &Attribute{
+					PrimitiveType: "String",
+				},
+				"MonitoringScheduleArn": &Attribute{
 					PrimitiveType: "String",
 				},
 			},
@@ -66898,11 +72474,6 @@ var Cfn = Spec{
 					Type:          "MonitoringExecutionSummary",
 					UpdateType:    "Mutable",
 				},
-				"MonitoringScheduleArn": &Property{
-					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringschedulearn",
-					PrimitiveType: "String",
-					UpdateType:    "Mutable",
-				},
 				"MonitoringScheduleConfig": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig",
 					Required:      true,
@@ -66913,7 +72484,7 @@ var Cfn = Spec{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringschedulename",
 					PrimitiveType: "String",
 					Required:      true,
-					UpdateType:    "Mutable",
+					UpdateType:    "Immutable",
 				},
 				"MonitoringScheduleStatus": &Property{
 					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringschedulestatus",
@@ -67038,6 +72609,91 @@ var Cfn = Spec{
 					ItemType:      "NotebookInstanceLifecycleHook",
 					Type:          "List",
 					UpdateType:    "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Pipeline": &ResourceType{
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html",
+			Properties: map[string]*Property{
+				"PipelineDefinition": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedefinition",
+					PrimitiveType: "Json",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"PipelineDescription": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedescription",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"PipelineDisplayName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedisplayname",
+					PrimitiveType: "String",
+					UpdateType:    "Mutable",
+				},
+				"PipelineName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinename",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"RoleArn": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-rolearn",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Mutable",
+				},
+				"Tags": &Property{
+					Documentation:     "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-tags",
+					DuplicatesAllowed: true,
+					ItemType:          "Tag",
+					Type:              "List",
+					UpdateType:        "Mutable",
+				},
+			},
+		},
+		"AWS::SageMaker::Project": &ResourceType{
+			Attributes: map[string]*Attribute{
+				"CreationTime": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ProjectArn": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ProjectId": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ProjectStatus": &Attribute{
+					PrimitiveType: "String",
+				},
+				"ServiceCatalogProvisionedProductDetails": &Attribute{
+					PrimitiveType: "Json",
+				},
+			},
+			Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html",
+			Properties: map[string]*Property{
+				"ProjectDescription": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-projectdescription",
+					PrimitiveType: "String",
+					UpdateType:    "Immutable",
+				},
+				"ProjectName": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-projectname",
+					PrimitiveType: "String",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"ServiceCatalogProvisioningDetails": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-servicecatalogprovisioningdetails",
+					PrimitiveType: "Json",
+					Required:      true,
+					UpdateType:    "Immutable",
+				},
+				"Tags": &Property{
+					Documentation: "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-tags",
+					ItemType:      "Tag",
+					Type:          "List",
+					UpdateType:    "Immutable",
 				},
 			},
 		},
