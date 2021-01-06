@@ -167,6 +167,10 @@ func getParameters(template cft.Template, cliParams map[string]string, old []typ
 
 	spinner.Resume()
 
+	for _, p := range newParams {
+		fmt.Println(ptr.ToString(p.ParameterKey), ptr.ToBool(p.UsePreviousValue))
+	}
+
 	return newParams
 }
 

@@ -7,6 +7,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/aws-cloudformation/rain/internal/config"
 	"github.com/aws-cloudformation/rain/internal/console"
 )
 
@@ -26,7 +27,7 @@ func init() {
 	statuses = make([]string, 0)
 
 	go func() {
-		for console.IsTTY {
+		for console.IsTTY && !config.Debug {
 			if !paused && len(statuses) > 0 {
 				update()
 				count = (count + 1) % len(spin)
@@ -38,6 +39,15 @@ func init() {
 }
 
 func update() {
+	if config.Debug {
+		if len(statuses) > 0 {
+			config.Debugf(statuses[len(statuses)-1])
+			statuses = statuses[:len(statuses)-1]
+		}
+
+		return
+	}
+
 	if !console.IsTTY {
 		return
 	}
